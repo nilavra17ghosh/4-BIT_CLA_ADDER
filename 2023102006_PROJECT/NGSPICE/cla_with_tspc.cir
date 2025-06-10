@@ -1,0 +1,134 @@
+.include TSMC_180nm.txt
+.include and2.subs
+.include and3.subs
+.include and4.subs
+.include and5.subs
+.include or2.subs
+.include or3.subs
+.include or4.subs
+.include or5.subs
+.include xor2.subs
+
+.param Supply=1.8
+.param LAMBDA=0.09u
+.param width_N=10*LAMBDA
+.param width_P=20*LAMBDA
+.param width_TSPC={5*LAMBDA}
+.global vdd gnd
+
+
+Vdd vdd gnd 'SUPPLY'
+
+vC C_0 gnd 0
+
+vclk clk gnd pulse 0 1.8 0ns 0ns 0ns 5ns 10ns
+
+vA0 A_0 gnd pulse 0 1.8 0ns 0ns 0ns 10ns 20ns
+vA1 A_1 gnd pulse 0 1.8 0ns 0ns 0ns 15ns 30ns
+vA2 A_2 gnd pulse 0 1.8 0ns 0ns 0ns 20ns 40ns
+vA3 A_3 gnd pulse 0 1.8 0ns 0ns 0ns 25ns 50ns
+
+vB0 B_0 gnd pulse 0 1.8 0ns 0ns 0ns 10ns 20ns
+vB1 B_1 gnd pulse 0 1.8 0ns 0ns 0ns 15ns 30ns
+vB2 B_2 gnd pulse 0 1.8 0ns 0ns 0ns 20ns 40ns
+vB3 B_3 gnd pulse 0 1.8 0ns 0ns 0ns 25ns 50ns
+
+.subckt inv y x vdd gnd 
+    M1 y x gnd gnd  CMOSN W={width_N} L={2*LAMBDA} AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N} AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+    M2 y x vdd vdd  CMOSP W={width_P} L={2*LAMBDA} AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P} AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+.ends inv
+
+.subckt FF_TSPC q d clk vdd gnd  
+  M1 a d vdd vdd CMOSP W={2*width_TSPC} L={2*LAMBDA} AS={5*2*width_TSPC*LAMBDA} PS={10*LAMBDA+2*2*width_TSPC} AD={5*2*width_TSPC*LAMBDA} PD={10*LAMBDA+2*2*width_TSPC}
+  M2 q1 clk a vdd CMOSP W={2*width_TSPC} L={2*LAMBDA} AS={5*2*width_TSPC*LAMBDA} PS={10*LAMBDA+2*2*width_TSPC} AD={5*2*width_TSPC*LAMBDA} PD={10*LAMBDA+2*2*width_TSPC}
+  M3 q1 d gnd gnd CMOSN W={2*width_TSPC} L={2*LAMBDA} AS={5*2*width_TSPC*LAMBDA} PS={10*LAMBDA+2*2*width_TSPC} AD={5*2*width_TSPC*LAMBDA} PD={10*LAMBDA+2*2*width_TSPC}
+  M4 q2 clk vdd vdd CMOSP W={2*width_TSPC} L={2*LAMBDA} AS={5*2*width_TSPC*LAMBDA} PS={10*LAMBDA+2*2*width_TSPC} AD={5*2*width_TSPC*LAMBDA} PD={10*LAMBDA+2*2*width_TSPC}
+  M5 q2 q1 b gnd CMOSN W={2*width_TSPC} L={2*LAMBDA} AS={5*2*width_TSPC*LAMBDA} PS={10*LAMBDA+2*2*width_TSPC} AD={5*2*width_TSPC*LAMBDA} PD={10*LAMBDA+2*2*width_TSPC}
+  M6 b clk gnd gnd CMOSN W={2*width_TSPC} L={2*LAMBDA} AS={5*2*width_TSPC*LAMBDA} PS={10*LAMBDA+2*2*width_TSPC} AD={5*2*width_TSPC*LAMBDA} PD={10*LAMBDA+2*2*width_TSPC}
+  M7 qq q2 vdd vdd CMOSP W={2*width_TSPC} L={2*LAMBDA} AS={5*2*width_TSPC*LAMBDA} PS={10*LAMBDA+2*2*width_TSPC} AD={5*2*width_TSPC*LAMBDA} PD={10*LAMBDA+2*2*width_TSPC}
+  M8 qq clk c gnd CMOSN W={2*width_TSPC} L={2*LAMBDA} AS={5*2*width_TSPC*LAMBDA} PS={10*LAMBDA+2*2*width_TSPC} AD={5*2*width_TSPC*LAMBDA} PD={10*LAMBDA+2*2*width_TSPC}
+  M9 c q2 gnd gnd CMOSN W={2*width_TSPC} L={2*LAMBDA} AS={5*2*width_TSPC*LAMBDA} PS={10*LAMBDA+2*2*width_TSPC} AD={5*2*width_TSPC*LAMBDA} PD={10*LAMBDA+2*2*width_TSPC}
+  x_inv_TSPC q qq vdd gnd inv
+.ends FF_TSPC
+
+x_TSPC_1 a0 A_0 clk vdd gnd FF_TSPC
+
+x_TSPC_2 a1 A_1 clk vdd gnd FF_TSPC
+
+x_TSPC_3 a2 A_2 clk vdd gnd FF_TSPC
+
+x_TSPC_4 a3 A_3 clk vdd gnd FF_TSPC
+
+
+x_TSPC_5 b0 B_0 clk vdd gnd FF_TSPC
+
+x_TSPC_6 b1 B_1 clk vdd gnd FF_TSPC
+
+x_TSPC_7 b2 B_2 clk vdd gnd FF_TSPC
+
+x_TSPC_8 b3 B_3 clk vdd gnd FF_TSPC
+
+
+xxPROP0 p0 a0 b0 xor2
+xxPROP1 p1 a1 b1 xor2
+xxPROP2 p2 a2 b2 xor2
+xxPROP3 p3 a3 b3 xor2
+
+xxGEN0 g0 a0 b0 and2
+xxGEN1 g1 a1 b1 and2
+xxGEN2 g2 a2 b2 and2
+xxGEN3 g3 a3 b3 and2
+
+xxANDcalc0 temp0 C_0 p0 and2
+xxORcalc0 c1 temp0 g0 or2
+
+xxANDcalc11 temp11 C_0 p0 p1 and3
+xxANDcalc12 temp12 g0 p1 and2
+xxORcalc1 c2 temp12 temp11 g1 or3
+
+xxANDcalc21 temp21 C_0 p0 p1 p2 and4
+xxANDcalc22 temp22 g0 p1 p2 and3
+xxANDcalc23 temp23 g1 p2 and2
+xxORcalc2 c3 temp23 temp22 temp21 g2 or4
+
+xxANDcalc31 temp31 C_0 p0 p1 p2 p3 and5
+xxANDcalc32 temp32 g0 p1 p2 p3 and4
+xxANDcalc33 temp33 g1 p2 p3 and3
+xxANDcalc34 temp34 g2 p3 and2
+xxOR3 cout temp34 temp33 temp32 temp31 g3 or5
+
+xxSUM0 sum0 p0 C_0 xor2
+xxSUM1 sum1 p1 c1 xor2
+xxSUM2 sum2 p2 c2 xor2
+xxSUM3 sum3 p3 c3 xor2
+
+x_TSPC_9 S_0 sum0 clk vdd gnd FF_TSPC
+
+x_TSPC_10 S_1 sum1 clk vdd gnd FF_TSPC
+
+x_TSPC_11 S_2 sum2 clk vdd gnd FF_TSPC
+
+x_TSPC_12 S_3 sum3 clk vdd gnd FF_TSPC
+
+
+x_TSPC_13 C_out cout clk vdd gnd FF_TSPC
+
+xinv1 S_0_inv S_0 vdd gnd inv
+xinv2 S_1_inv S_1 vdd gnd inv
+xinv3 S_2_inv S_2 vdd gnd inv
+xinv4 S_3_inv S_3 vdd gnd inv
+xinv5 C_out_inv C_out vdd gnd inv
+
+
+.tran 0.1n 100n
+
+.control
+run
+
+plot v(A_0) v(A_1)+2 v(A_2)+4 v(A_3)+6 v(clk)-2
+
+plot v(C_out)+8 v(S_0) v(S_1)+2 v(S_2)+4 v(S_3)+6 v(clk)-2
+
+set curplottitle = "Nilavra Ghosh - 2023102006"
+.endc
+.end

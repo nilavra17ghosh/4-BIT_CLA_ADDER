@@ -1,0 +1,1835 @@
+.include TSMC_180nm.txt
+
+.param Supply=1.8
+.param LAMBDA=0.09u
+.param width_N=10*LAMBDA
+.param width_P=20*LAMBDA
+.global vdd gnd
+
+Vdd vdd gnd 'SUPPLY'
+
+vC cin gnd 0
+
+vclk clk gnd pulse 0 1.8 0ns 0ns 0ns 5ns 10ns
+
+vA0 a0 gnd pulse 0 1.8 0ns 0ns 0ns 10ns 20ns
+vA1 a1 gnd pulse 0 1.8 0ns 0ns 0ns 15ns 30ns
+vA2 a2 gnd pulse 0 1.8 0ns 0ns 0ns 20ns 40ns
+vA3 a3 gnd pulse 0 1.8 0ns 0ns 0ns 25ns 50ns
+
+vB0 b0 gnd pulse 0 1.8 0ns 0ns 0ns 10ns 20ns
+vB1 b1 gnd pulse 0 1.8 0ns 0ns 0ns 15ns 30ns
+vB2 b2 gnd pulse 0 1.8 0ns 0ns 0ns 20ns 40ns
+vB3 b3 gnd pulse 0 1.8 0ns 0ns 0ns 25ns 50ns
+
+.option scale=0.09u
+
+M1000 cla_0/3and_0/a_13_5# p1 vdd vdd CMOSP w=6 l=2
++  ad=84 pd=52 as=108 ps=72
+M1001 cla_0/3and_0/a_13_n28# c_in gnd Gnd CMOSN w=4 l=2
++  ad=32 pd=24 as=40 ps=36
+M1002 t2_3and cla_0/3and_0/a_13_5# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1003 vdd p0 cla_0/3and_0/a_13_5# vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1004 t2_3and cla_0/3and_0/a_13_5# vdd vdd CMOSP w=6 l=2
++  ad=30 pd=22 as=0 ps=0
+M1005 cla_0/3and_0/a_13_5# c_in vdd vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1006 cla_0/3and_0/a_13_5# p1 cla_0/3and_0/a_23_n28# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1007 cla_0/3and_0/a_23_n28# p0 cla_0/3and_0/a_13_n28# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+
+
+M1008 cla_0/4or_0/a_0_n37# t3_3and gnd Gnd CMOSN w=4 l=2
++  ad=64 pd=48 as=92 ps=78
+M1009 cla_0/4or_0/a_0_n37# t3_4and gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1010 carry2 cla_0/4or_0/a_0_n37# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1011 cla_0/4or_0/a_19_13# t3_3and cla_0/4or_0/a_10_13# vdd CMOSP w=6 l=2
++  ad=48 pd=28 as=42 ps=26
+M1012 gnd t3_2and cla_0/4or_0/a_0_n37# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1013 carry2 cla_0/4or_0/a_0_n37# vdd vdd CMOSP w=6 l=2
++  ad=30 pd=22 as=60 ps=44
+M1014 cla_0/4or_0/a_0_13# t3_4and vdd vdd CMOSP w=6 l=2
++  ad=48 pd=28 as=0 ps=0
+M1015 cla_0/4or_0/a_0_n37# g2 cla_0/4or_0/a_19_13# vdd CMOSP w=6 l=2
++  ad=36 pd=24 as=0 ps=0
+M1016 cla_0/4or_0/a_10_13# t3_2and cla_0/4or_0/a_0_13# vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1017 gnd g2 cla_0/4or_0/a_0_n37# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+
+M1018 cla_0/3and_1/a_13_5# p2 vdd vdd CMOSP w=6 l=2
++  ad=84 pd=52 as=108 ps=72
+M1019 cla_0/3and_1/a_13_n28# g0 gnd Gnd CMOSN w=4 l=2
++  ad=32 pd=24 as=40 ps=36
+M1020 t3_3and cla_0/3and_1/a_13_5# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1021 vdd p1 cla_0/3and_1/a_13_5# vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1022 t3_3and cla_0/3and_1/a_13_5# vdd vdd CMOSP w=6 l=2
++  ad=30 pd=22 as=0 ps=0
+M1023 cla_0/3and_1/a_13_5# g0 vdd vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1024 cla_0/3and_1/a_13_5# p2 cla_0/3and_1/a_23_n28# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1025 cla_0/3and_1/a_23_n28# p1 cla_0/3and_1/a_13_n28# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+
+
+M1026 cla_0/3and_2/a_13_5# p3 vdd vdd CMOSP w=6 l=2
++  ad=84 pd=52 as=108 ps=72
+M1027 cla_0/3and_2/a_13_n28# g1 gnd Gnd CMOSN w=4 l=2
++  ad=32 pd=24 as=40 ps=36
+M1028 t4_3and cla_0/3and_2/a_13_5# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1029 vdd p2 cla_0/3and_2/a_13_5# vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1030 t4_3and cla_0/3and_2/a_13_5# vdd vdd CMOSP w=6 l=2
++  ad=30 pd=22 as=0 ps=0
+M1031 cla_0/3and_2/a_13_5# g1 vdd vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1032 cla_0/3and_2/a_13_5# p3 cla_0/3and_2/a_23_n28# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1033 cla_0/3and_2/a_23_n28# p2 cla_0/3and_2/a_13_n28# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+
+
+M1034 vdd p0 cla_0/2and_0/a_13_5# vdd CMOSP w=6 l=2
++  ad=216 pd=156 as=48 ps=28
+M1035 t1_2and cla_0/2and_0/a_13_5# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1036 cla_0/2and_0/a_13_5# c_in vdd vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1037 t1_2and cla_0/2and_0/a_13_5# vdd vdd CMOSP w=6 l=2
++  ad=30 pd=22 as=0 ps=0
+M1038 cla_0/2and_0/a_13_5# p0 cla_0/2and_0/a_13_n25# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1039 cla_0/2and_0/a_13_n25# c_in gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+
+
+M1040 vdd p1 cla_0/2and_1/a_13_5# vdd CMOSP w=6 l=2
++  ad=96 pd=68 as=48 ps=28
+M1041 t2_2and cla_0/2and_1/a_13_5# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1042 cla_0/2and_1/a_13_5# g0 vdd vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1043 t2_2and cla_0/2and_1/a_13_5# vdd vdd CMOSP w=6 l=2
++  ad=30 pd=22 as=0 ps=0
+M1044 cla_0/2and_1/a_13_5# p1 cla_0/2and_1/a_13_n25# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1045 cla_0/2and_1/a_13_n25# g0 gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+
+
+M1046 vdd p2 cla_0/2and_2/a_13_5# vdd CMOSP w=6 l=2
++  ad=96 pd=68 as=48 ps=28
+M1047 t3_2and cla_0/2and_2/a_13_5# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1048 cla_0/2and_2/a_13_5# g1 vdd vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1049 t3_2and cla_0/2and_2/a_13_5# vdd vdd CMOSP w=6 l=2
++  ad=30 pd=22 as=0 ps=0
+M1050 cla_0/2and_2/a_13_5# p2 cla_0/2and_2/a_13_n25# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1051 cla_0/2and_2/a_13_n25# g1 gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+
+
+M1052 vdd p3 cla_0/2and_3/a_13_5# vdd CMOSP w=6 l=2
++  ad=96 pd=68 as=48 ps=28
+M1053 t4_2and cla_0/2and_3/a_13_5# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1054 cla_0/2and_3/a_13_5# g2 vdd vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1055 t4_2and cla_0/2and_3/a_13_5# vdd vdd CMOSP w=6 l=2
++  ad=30 pd=22 as=0 ps=0
+M1056 cla_0/2and_3/a_13_5# p3 cla_0/2and_3/a_13_n25# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1057 cla_0/2and_3/a_13_n25# g2 gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+
+
+M1058 carry3 cla_0/5or_0/a_0_n44# vdd vdd CMOSP w=6 l=2
++  ad=30 pd=22 as=60 ps=44
+M1059 gnd t4_2and cla_0/5or_0/a_0_n44# Gnd CMOSN w=4 l=2
++  ad=180 pd=154 as=88 ps=68
+M1060 carry3 cla_0/5or_0/a_0_n44# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1061 cla_0/5or_0/a_0_n44# t4_3and gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1062 cla_0/5or_0/a_0_n44# t4_5and gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1063 cla_0/5or_0/a_19_13# t4_3and cla_0/5or_0/a_10_13# vdd CMOSP w=6 l=2
++  ad=48 pd=28 as=42 ps=26
+M1064 cla_0/5or_0/a_0_13# t4_5and vdd vdd CMOSP w=6 l=2
++  ad=48 pd=28 as=0 ps=0
+M1065 cla_0/5or_0/a_29_13# t4_2and cla_0/5or_0/a_19_13# vdd CMOSP w=6 l=2
++  ad=48 pd=28 as=0 ps=0
+M1066 gnd t4_4and cla_0/5or_0/a_0_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1067 cla_0/5or_0/a_10_13# t4_4and cla_0/5or_0/a_0_13# vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1068 cla_0/5or_0/a_0_n44# g3 cla_0/5or_0/a_29_13# vdd CMOSP w=6 l=2
++  ad=36 pd=24 as=0 ps=0
+M1069 cla_0/5or_0/a_0_n44# g3 gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+
+
+M1070 carry0 cla_0/2or_0/a_0_n30# vdd vdd CMOSP w=6 l=2
++  ad=30 pd=22 as=60 ps=44
+M1071 gnd t1_2and cla_0/2or_0/a_0_n30# Gnd CMOSN w=4 l=2
++  ad=60 pd=54 as=32 ps=24
+M1072 cla_0/2or_0/a_0_n30# t1_2and cla_0/2or_0/a_0_6# vdd CMOSP w=6 l=2
++  ad=30 pd=22 as=48 ps=28
+M1073 carry0 cla_0/2or_0/a_0_n30# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1074 cla_0/2or_0/a_0_6# g0 vdd vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1075 cla_0/2or_0/a_0_n30# g0 gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+
+
+M1076 t4_5and cla_0/5and_0/a_13_5# vdd vdd CMOSP w=6 l=2
++  ad=30 pd=22 as=156 ps=100
+M1077 cla_0/5and_0/a_13_5# p1 vdd vdd CMOSP w=6 l=2
++  ad=132 pd=80 as=0 ps=0
+M1078 cla_0/5and_0/a_43_n43# p2 cla_0/5and_0/a_33_n43# Gnd CMOSN w=4 l=2
++  ad=32 pd=24 as=32 ps=24
+M1079 cla_0/5and_0/a_33_n43# p1 cla_0/5and_0/a_23_n43# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1080 vdd p0 cla_0/5and_0/a_13_5# vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1081 cla_0/5and_0/a_23_n43# p0 cla_0/5and_0/a_13_n43# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1082 t4_5and cla_0/5and_0/a_13_5# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1083 cla_0/5and_0/a_13_n43# c_in gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1084 cla_0/5and_0/a_13_5# p3 vdd vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1085 cla_0/5and_0/a_13_5# c_in vdd vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1086 vdd p2 cla_0/5and_0/a_13_5# vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1087 cla_0/5and_0/a_13_5# p3 cla_0/5and_0/a_43_n43# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+
+
+M1088 carry1 cla_0/3or_0/a_0_n30# vdd vdd CMOSP w=6 l=2
++  ad=30 pd=22 as=60 ps=44
+M1089 gnd t2_2and cla_0/3or_0/a_0_n30# Gnd CMOSN w=4 l=2
++  ad=68 pd=58 as=56 ps=44
+M1090 carry1 cla_0/3or_0/a_0_n30# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1091 cla_0/3or_0/a_0_n30# g1 cla_0/3or_0/a_10_13# vdd CMOSP w=6 l=2
++  ad=36 pd=24 as=42 ps=26
+M1092 cla_0/3or_0/a_0_13# t2_3and vdd vdd CMOSP w=6 l=2
++  ad=48 pd=28 as=0 ps=0
+M1093 cla_0/3or_0/a_10_13# t2_2and cla_0/3or_0/a_0_13# vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1094 cla_0/3or_0/a_0_n30# g1 gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1095 cla_0/3or_0/a_0_n30# t2_3and gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+
+
+M1096 cla_0/4and_0/a_33_n36# p1 cla_0/4and_0/a_23_n36# Gnd CMOSN w=4 l=2
++  ad=32 pd=24 as=32 ps=24
+M1097 cla_0/4and_0/a_13_5# p1 vdd vdd CMOSP w=6 l=2
++  ad=96 pd=56 as=144 ps=96
+M1098 cla_0/4and_0/a_23_n36# p0 cla_0/4and_0/a_13_n36# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1099 cla_0/4and_0/a_13_n36# c_in gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=40 ps=36
+M1100 vdd p0 cla_0/4and_0/a_13_5# vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1101 cla_0/4and_0/a_13_5# c_in vdd vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1102 t3_4and cla_0/4and_0/a_13_5# vdd vdd CMOSP w=6 l=2
++  ad=30 pd=22 as=0 ps=0
+M1103 t3_4and cla_0/4and_0/a_13_5# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1104 vdd p2 cla_0/4and_0/a_13_5# vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1105 cla_0/4and_0/a_13_5# p2 cla_0/4and_0/a_33_n36# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+
+
+M1106 cla_0/4and_1/a_33_n36# p2 cla_0/4and_1/a_23_n36# Gnd CMOSN w=4 l=2
++  ad=32 pd=24 as=32 ps=24
+M1107 cla_0/4and_1/a_13_5# p2 vdd vdd CMOSP w=6 l=2
++  ad=96 pd=56 as=144 ps=96
+M1108 cla_0/4and_1/a_23_n36# p1 cla_0/4and_1/a_13_n36# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1109 cla_0/4and_1/a_13_n36# g0 gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=40 ps=36
+M1110 vdd p1 cla_0/4and_1/a_13_5# vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1111 cla_0/4and_1/a_13_5# g0 vdd vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1112 t4_4and cla_0/4and_1/a_13_5# vdd vdd CMOSP w=6 l=2
++  ad=30 pd=22 as=0 ps=0
+M1113 t4_4and cla_0/4and_1/a_13_5# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1114 vdd p3 cla_0/4and_1/a_13_5# vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1115 cla_0/4and_1/a_13_5# p3 cla_0/4and_1/a_33_n36# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=0 ps=0
+
+
+M1116 sumblock_0/xor1_0/a_24_2# p3 sum3 vdd CMOSP w=6 l=2
++  ad=48 pd=28 as=48 ps=28
+M1117 vdd carry2 sumblock_0/xor1_0/a_32_n47# vdd CMOSP w=6 l=2
++  ad=120 pd=88 as=30 ps=22
+M1118 gnd carry2 sumblock_0/xor1_0/a_32_n47# Gnd CMOSN w=4 l=2
++  ad=80 pd=72 as=20 ps=18
+M1119 sum3 sumblock_0/xor1_0/a_n12_n44# sumblock_0/xor1_0/a_4_2# vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=48 ps=28
+M1120 sumblock_0/xor1_0/a_n12_n44# p3 gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1121 gnd sumblock_0/xor1_0/a_32_n47# sumblock_0/xor1_0/a_24_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1122 sumblock_0/xor1_0/a_4_2# carry2 vdd vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1123 sumblock_0/xor1_0/a_24_n44# sumblock_0/xor1_0/a_n12_n44# sum3 Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1124 vdd sumblock_0/xor1_0/a_32_n47# sumblock_0/xor1_0/a_24_2# vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1125 sum3 p3 sumblock_0/xor1_0/a_4_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1126 sumblock_0/xor1_0/a_4_n44# carry2 gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1127 sumblock_0/xor1_0/a_n12_n44# p3 vdd vdd CMOSP w=6 l=2
++  ad=30 pd=22 as=0 ps=0
+
+M1128 sumblock_0/xor1_1/a_24_2# p2 sum2 vdd CMOSP w=6 l=2
++  ad=48 pd=28 as=48 ps=28
+M1129 vdd carry1 sumblock_0/xor1_1/a_32_n47# vdd CMOSP w=6 l=2
++  ad=120 pd=88 as=30 ps=22
+M1130 gnd carry1 sumblock_0/xor1_1/a_32_n47# Gnd CMOSN w=4 l=2
++  ad=80 pd=72 as=20 ps=18
+M1131 sum2 sumblock_0/xor1_1/a_n12_n44# sumblock_0/xor1_1/a_4_2# vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=48 ps=28
+M1132 sumblock_0/xor1_1/a_n12_n44# p2 gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1133 gnd sumblock_0/xor1_1/a_32_n47# sumblock_0/xor1_1/a_24_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1134 sumblock_0/xor1_1/a_4_2# carry1 vdd vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1135 sumblock_0/xor1_1/a_24_n44# sumblock_0/xor1_1/a_n12_n44# sum2 Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1136 vdd sumblock_0/xor1_1/a_32_n47# sumblock_0/xor1_1/a_24_2# vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1137 sum2 p2 sumblock_0/xor1_1/a_4_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1138 sumblock_0/xor1_1/a_4_n44# carry1 gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1139 sumblock_0/xor1_1/a_n12_n44# p2 vdd vdd CMOSP w=6 l=2
++  ad=30 pd=22 as=0 ps=0
+
+
+M1140 sumblock_0/xor1_2/a_24_2# p1 sum1 vdd CMOSP w=6 l=2
++  ad=48 pd=28 as=48 ps=28
+M1141 vdd carry0 sumblock_0/xor1_2/a_32_n47# vdd CMOSP w=6 l=2
++  ad=120 pd=88 as=30 ps=22
+M1142 gnd carry0 sumblock_0/xor1_2/a_32_n47# Gnd CMOSN w=4 l=2
++  ad=80 pd=72 as=20 ps=18
+M1143 sum1 sumblock_0/xor1_2/a_n12_n44# sumblock_0/xor1_2/a_4_2# vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=48 ps=28
+M1144 sumblock_0/xor1_2/a_n12_n44# p1 gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1145 gnd sumblock_0/xor1_2/a_32_n47# sumblock_0/xor1_2/a_24_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1146 sumblock_0/xor1_2/a_4_2# carry0 vdd vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1147 sumblock_0/xor1_2/a_24_n44# sumblock_0/xor1_2/a_n12_n44# sum1 Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1148 vdd sumblock_0/xor1_2/a_32_n47# sumblock_0/xor1_2/a_24_2# vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1149 sum1 p1 sumblock_0/xor1_2/a_4_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1150 sumblock_0/xor1_2/a_4_n44# carry0 gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1151 sumblock_0/xor1_2/a_n12_n44# p1 vdd vdd CMOSP w=6 l=2
++  ad=30 pd=22 as=0 ps=0
+
+
+M1152 sumblock_0/xor1_3/a_24_2# p0 sum0 vdd CMOSP w=6 l=2
++  ad=48 pd=28 as=48 ps=28
+M1153 vdd c_in sumblock_0/xor1_3/a_32_n47# vdd CMOSP w=6 l=2
++  ad=120 pd=88 as=30 ps=22
+M1154 gnd c_in sumblock_0/xor1_3/a_32_n47# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=20 ps=18
+M1155 sum0 sumblock_0/xor1_3/a_n12_n44# sumblock_0/xor1_3/a_4_2# vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=48 ps=28
+M1156 sumblock_0/xor1_3/a_n12_n44# p0 gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1157 gnd sumblock_0/xor1_3/a_32_n47# sumblock_0/xor1_3/a_24_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1158 sumblock_0/xor1_3/a_4_2# c_in vdd vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1159 sumblock_0/xor1_3/a_24_n44# sumblock_0/xor1_3/a_n12_n44# sum0 Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1160 vdd sumblock_0/xor1_3/a_32_n47# sumblock_0/xor1_3/a_24_2# vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1161 sum0 p0 sumblock_0/xor1_3/a_4_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1162 sumblock_0/xor1_3/a_4_n44# c_in gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1163 sumblock_0/xor1_3/a_n12_n44# p0 vdd vdd CMOSP w=6 l=2
++  ad=30 pd=22 as=0 ps=0
+
+
+M1164 vdd b3 propgen_0/2and_0/a_13_5# vdd CMOSP w=6 l=2
++  ad=96 pd=68 as=48 ps=28
+M1165 g3 propgen_0/2and_0/a_13_5# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1166 propgen_0/2and_0/a_13_5# a3 vdd vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1167 g3 propgen_0/2and_0/a_13_5# vdd vdd CMOSP w=6 l=2
++  ad=30 pd=22 as=0 ps=0
+M1168 propgen_0/2and_0/a_13_5# b3 propgen_0/2and_0/a_13_n25# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1169 propgen_0/2and_0/a_13_n25# a3 gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+
+
+M1170 vdd b2 propgen_0/2and_1/a_13_5# vdd CMOSP w=6 l=2
++  ad=96 pd=68 as=48 ps=28
+M1171 g2 propgen_0/2and_1/a_13_5# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1172 propgen_0/2and_1/a_13_5# a2 vdd vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1173 g2 propgen_0/2and_1/a_13_5# vdd vdd CMOSP w=6 l=2
++  ad=30 pd=22 as=0 ps=0
+M1174 propgen_0/2and_1/a_13_5# b2 propgen_0/2and_1/a_13_n25# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1175 propgen_0/2and_1/a_13_n25# a2 gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+
+
+M1176 vdd b1 propgen_0/2and_2/a_13_5# vdd CMOSP w=6 l=2
++  ad=96 pd=68 as=48 ps=28
+M1177 g1 propgen_0/2and_2/a_13_5# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1178 propgen_0/2and_2/a_13_5# a1 vdd vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1179 g1 propgen_0/2and_2/a_13_5# vdd vdd CMOSP w=6 l=2
++  ad=30 pd=22 as=0 ps=0
+M1180 propgen_0/2and_2/a_13_5# b1 propgen_0/2and_2/a_13_n25# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1181 propgen_0/2and_2/a_13_n25# a1 gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+
+
+M1182 vdd b0 propgen_0/2and_3/a_13_5# vdd CMOSP w=6 l=2
++  ad=96 pd=68 as=48 ps=28
+M1183 g0 propgen_0/2and_3/a_13_5# gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1184 propgen_0/2and_3/a_13_5# a0 vdd vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1185 g0 propgen_0/2and_3/a_13_5# vdd vdd CMOSP w=6 l=2
++  ad=30 pd=22 as=0 ps=0
+M1186 propgen_0/2and_3/a_13_5# b0 propgen_0/2and_3/a_13_n25# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1187 propgen_0/2and_3/a_13_n25# a0 gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+
+
+M1188 propgen_0/xor1_0/a_24_2# a3 p3 vdd CMOSP w=6 l=2
++  ad=48 pd=28 as=48 ps=28
+M1189 vdd b3 propgen_0/xor1_0/a_32_n47# vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=30 ps=22
+M1190 gnd b3 propgen_0/xor1_0/a_32_n47# Gnd CMOSN w=4 l=2
++  ad=80 pd=72 as=20 ps=18
+M1191 p3 propgen_0/xor1_0/a_n12_n44# propgen_0/xor1_0/a_4_2# vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=48 ps=28
+M1192 propgen_0/xor1_0/a_n12_n44# a3 gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1193 gnd propgen_0/xor1_0/a_32_n47# propgen_0/xor1_0/a_24_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1194 propgen_0/xor1_0/a_4_2# b3 vdd vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1195 propgen_0/xor1_0/a_24_n44# propgen_0/xor1_0/a_n12_n44# p3 Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1196 vdd propgen_0/xor1_0/a_32_n47# propgen_0/xor1_0/a_24_2# vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1197 p3 a3 propgen_0/xor1_0/a_4_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1198 propgen_0/xor1_0/a_4_n44# b3 gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1199 propgen_0/xor1_0/a_n12_n44# a3 vdd vdd CMOSP w=6 l=2
++  ad=30 pd=22 as=0 ps=0
+
+
+M1200 propgen_0/xor1_1/a_24_2# a2 p2 vdd CMOSP w=6 l=2
++  ad=48 pd=28 as=48 ps=28
+M1201 vdd b2 propgen_0/xor1_1/a_32_n47# vdd CMOSP w=6 l=2
++  ad=120 pd=88 as=30 ps=22
+M1202 gnd b2 propgen_0/xor1_1/a_32_n47# Gnd CMOSN w=4 l=2
++  ad=80 pd=72 as=20 ps=18
+M1203 p2 propgen_0/xor1_1/a_n12_n44# propgen_0/xor1_1/a_4_2# vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=48 ps=28
+M1204 propgen_0/xor1_1/a_n12_n44# a2 gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1205 gnd propgen_0/xor1_1/a_32_n47# propgen_0/xor1_1/a_24_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1206 propgen_0/xor1_1/a_4_2# b2 vdd vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1207 propgen_0/xor1_1/a_24_n44# propgen_0/xor1_1/a_n12_n44# p2 Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1208 vdd propgen_0/xor1_1/a_32_n47# propgen_0/xor1_1/a_24_2# vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1209 p2 a2 propgen_0/xor1_1/a_4_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1210 propgen_0/xor1_1/a_4_n44# b2 gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1211 propgen_0/xor1_1/a_n12_n44# a2 vdd vdd CMOSP w=6 l=2
++  ad=30 pd=22 as=0 ps=0
+
+
+M1212 propgen_0/xor1_2/a_24_2# a1 p1 vdd CMOSP w=6 l=2
++  ad=48 pd=28 as=48 ps=28
+M1213 vdd b1 propgen_0/xor1_2/a_32_n47# vdd CMOSP w=6 l=2
++  ad=120 pd=88 as=30 ps=22
+M1214 gnd b1 propgen_0/xor1_2/a_32_n47# Gnd CMOSN w=4 l=2
++  ad=80 pd=72 as=20 ps=18
+M1215 p1 propgen_0/xor1_2/a_n12_n44# propgen_0/xor1_2/a_4_2# vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=48 ps=28
+M1216 propgen_0/xor1_2/a_n12_n44# a1 gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1217 gnd propgen_0/xor1_2/a_32_n47# propgen_0/xor1_2/a_24_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1218 propgen_0/xor1_2/a_4_2# b1 vdd vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1219 propgen_0/xor1_2/a_24_n44# propgen_0/xor1_2/a_n12_n44# p1 Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1220 vdd propgen_0/xor1_2/a_32_n47# propgen_0/xor1_2/a_24_2# vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1221 p1 a1 propgen_0/xor1_2/a_4_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1222 propgen_0/xor1_2/a_4_n44# b1 gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1223 propgen_0/xor1_2/a_n12_n44# a1 vdd vdd CMOSP w=6 l=2
++  ad=30 pd=22 as=0 ps=0
+
+
+M1224 propgen_0/xor1_3/a_24_2# a0 p0 vdd CMOSP w=6 l=2
++  ad=48 pd=28 as=48 ps=28
+M1225 vdd b0 propgen_0/xor1_3/a_32_n47# vdd CMOSP w=6 l=2
++  ad=120 pd=88 as=30 ps=22
+M1226 gnd b0 propgen_0/xor1_3/a_32_n47# Gnd CMOSN w=4 l=2
++  ad=80 pd=72 as=20 ps=18
+M1227 p0 propgen_0/xor1_3/a_n12_n44# propgen_0/xor1_3/a_4_2# vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=48 ps=28
+M1228 propgen_0/xor1_3/a_n12_n44# a0 gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1229 gnd propgen_0/xor1_3/a_32_n47# propgen_0/xor1_3/a_24_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1230 propgen_0/xor1_3/a_4_2# b0 vdd vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1231 propgen_0/xor1_3/a_24_n44# propgen_0/xor1_3/a_n12_n44# p0 Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1232 vdd propgen_0/xor1_3/a_32_n47# propgen_0/xor1_3/a_24_2# vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1233 p0 a0 propgen_0/xor1_3/a_4_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1234 propgen_0/xor1_3/a_4_n44# b0 gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1235 propgen_0/xor1_3/a_n12_n44# a0 vdd vdd CMOSP w=6 l=2
++  ad=30 pd=22 as=0 ps=0
+
+
+C0 g2 gnd 0.06fF
+C1 g0 vdd 0.44fF
+C2 vdd cla_0/3and_0/a_13_5# 0.05fF
+C3 vdd p2 0.07fF
+C4 vdd vdd 0.03fF
+C5 g2 gnd 0.05fF
+C6 gnd g0 0.12fF
+C7 c_in gnd 0.06fF
+C8 a1 gnd 0.01fF
+C9 sumblock_0/xor1_1/a_32_n47# sum2 0.09fF
+C10 vdd gnd 0.02fF
+C11 vdd p3 0.08fF
+C12 gnd gnd 0.20fF
+C13 propgen_0/xor1_3/a_32_n47# vdd 0.06fF
+C14 b0 p0 0.10fF
+C15 carry0 gnd 0.12fF
+C16 vdd vdd 0.03fF
+C17 a3 gnd 0.08fF
+C18 propgen_0/xor1_0/a_n12_n44# p3 0.12fF
+C19 gnd gnd 0.16fF
+C20 p0 gnd 0.07fF
+C21 p1 gnd 0.07fF
+C22 a2 gnd 0.05fF
+C23 gnd gnd 0.59fF
+C24 p0 gnd 0.01fF
+C25 g1 gnd 0.06fF
+C26 vdd sumblock_0/xor1_3/a_32_n47# 0.06fF
+C27 g3 gnd 0.05fF
+C28 gnd gnd 0.09fF
+C29 vdd sum1 0.03fF
+C30 c_in gnd 0.08fF
+C31 gnd gnd 0.05fF
+C32 vdd a3 0.14fF
+C33 g2 gnd 0.06fF
+C34 gnd gnd 0.93fF
+C35 b0 gnd 0.09fF
+C36 b1 gnd 0.07fF
+C37 propgen_0/2and_3/a_13_5# b0 0.17fF
+C38 propgen_0/xor1_2/a_32_n47# gnd 0.04fF
+C39 gnd b3 0.03fF
+C40 vdd p3 0.03fF
+C41 p2 gnd 0.05fF
+C42 cla_0/3and_1/a_13_5# t3_3and 0.05fF
+C43 vdd gnd 0.05fF
+C44 gnd gnd 0.37fF
+C45 gnd gnd 0.07fF
+C46 vdd gnd 0.48fF
+C47 vdd vdd 0.03fF
+C48 p2 p0 0.08fF
+C49 p3 gnd 0.03fF
+C50 vdd gnd 0.02fF
+C51 p1 cla_0/2and_1/a_13_5# 0.17fF
+C52 vdd t2_2and 0.03fF
+C53 sumblock_0/xor1_0/a_32_n47# vdd 0.06fF
+C54 sum0 gnd 0.06fF
+C55 g1 cla_0/2and_2/a_13_5# 0.04fF
+C56 gnd p2 0.07fF
+C57 gnd gnd 0.16fF
+C58 vdd gnd 0.06fF
+C59 sumblock_0/xor1_0/a_n12_n44# carry2 0.20fF
+C60 t4_5and vdd 0.06fF
+C61 vdd vdd 0.03fF
+C62 vdd gnd 0.03fF
+C63 a1 b1 4.17fF
+C64 vdd propgen_0/xor1_2/a_n12_n44# 0.09fF
+C65 gnd vdd 0.04fF
+C66 vdd t4_3and 0.06fF
+C67 g0 vdd 0.01fF
+C68 gnd gnd 0.01fF
+C69 vdd p1 0.09fF
+C70 g3 vdd 0.07fF
+C71 g1 vdd 0.06fF
+C72 gnd p2 0.06fF
+C73 propgen_0/2and_3/a_13_5# g0 0.05fF
+C74 gnd gnd 0.02fF
+C75 sum0 g0 0.17fF
+C76 t4_4and cla_0/5or_0/a_0_n44# 0.08fF
+C77 p3 p1 0.17fF
+C78 vdd gnd 0.06fF
+C79 p1 p2 1.57fF
+C80 gnd p0 0.07fF
+C81 vdd g3 0.06fF
+C82 gnd gnd 0.14fF
+C83 gnd gnd 0.16fF
+C84 a0 vdd 0.04fF
+C85 gnd c_in 0.34fF
+C86 t4_4and gnd 0.06fF
+C87 cla_0/3and_2/a_13_5# vdd 0.13fF
+C88 gnd gnd 0.09fF
+C89 p2 gnd 0.03fF
+C90 vdd gnd 0.09fF
+C91 vdd p2 0.02fF
+C92 vdd cla_0/4and_0/a_13_5# 0.05fF
+C93 p1 p2 1.31fF
+C94 gnd gnd 0.06fF
+C95 gnd gnd 0.09fF
+C96 vdd gnd 0.07fF
+C97 vdd cla_0/3and_2/a_13_5# 0.05fF
+C98 gnd sum0 0.13fF
+C99 p0 gnd 0.06fF
+C100 cla_0/4or_0/a_0_n37# sum2 0.05fF
+C101 p3 gnd 0.05fF
+C102 sum2 carry1 0.10fF
+C103 p2 cla_0/2and_2/a_13_5# 0.17fF
+C104 vdd vdd 0.05fF
+C105 c_in p1 0.08fF
+C106 gnd g0 0.10fF
+C107 p1 gnd 0.11fF
+C108 b1 gnd 0.01fF
+C109 vdd vdd 0.05fF
+C110 vdd cla_0/2and_0/a_13_5# 0.02fF
+C111 vdd gnd 0.04fF
+C112 vdd vdd 0.05fF
+C113 a0 gnd 0.08fF
+C114 propgen_0/xor1_3/a_n12_n44# p0 0.12fF
+C115 vdd cla_0/4and_1/a_13_5# 0.05fF
+C116 g0 p2 0.08fF
+C117 carry1 gnd 0.04fF
+C118 p2 gnd 0.02fF
+C119 b3 gnd 0.12fF
+C120 propgen_0/xor1_0/a_32_n47# p3 0.09fF
+C121 vdd p2 0.23fF
+C122 cla_0/4or_0/a_0_n37# vdd 0.04fF
+C123 vdd sum2 0.03fF
+C124 gnd gnd 0.05fF
+C125 b3 gnd 0.12fF
+C126 propgen_0/2and_0/a_13_5# a3 0.04fF
+C127 g0 p1 1.46fF
+C128 vdd gnd 0.16fF
+C129 vdd vdd 0.12fF
+C130 g2 gnd 0.06fF
+C131 b2 gnd 0.01fF
+C132 gnd gnd 0.04fF
+C133 carry2 sum3 0.10fF
+C134 gnd gnd 0.53fF
+C135 g1 vdd 0.09fF
+C136 gnd p0 0.06fF
+C137 t3_2and t3_3and 0.86fF
+C138 vdd vdd 0.06fF
+C139 gnd gnd 0.09fF
+C140 vdd b1 0.08fF
+C141 vdd vdd 0.06fF
+C142 t2_2and gnd 0.06fF
+C143 vdd b3 0.13fF
+C144 vdd propgen_0/2and_2/a_13_5# 0.08fF
+C145 t4_4and t4_5and 0.47fF
+C146 gnd vdd 0.13fF
+C147 sumblock_0/xor1_0/a_n12_n44# vdd 0.12fF
+C148 p2 gnd 0.04fF
+C149 gnd gnd 0.03fF
+C150 vdd p1 0.11fF
+C151 gnd gnd 0.15fF
+C152 gnd vdd 0.09fF
+C153 gnd gnd 0.12fF
+C154 p3 cla_0/2and_3/a_13_5# 0.17fF
+C155 g1 propgen_0/2and_2/a_13_5# 0.05fF
+C156 gnd gnd 0.05fF
+C157 gnd g0 0.07fF
+C158 g2 gnd 0.09fF
+C159 gnd p1 0.19fF
+C160 gnd t4_3and 0.06fF
+C161 vdd propgen_0/xor1_2/a_32_n47# 0.09fF
+C162 a1 propgen_0/xor1_2/a_n12_n44# 0.08fF
+C163 vdd t3_4and 0.06fF
+C164 cla_0/4and_0/a_13_5# gnd 0.02fF
+C165 g0 cla_0/3and_1/a_13_5# 0.04fF
+C166 vdd vdd 0.03fF
+C167 a3 vdd 0.08fF
+C168 c_in vdd 0.08fF
+C169 cla_0/3or_0/a_0_n30# gnd 0.21fF
+C170 cla_0/5and_0/a_13_5# p0 0.16fF
+C171 propgen_0/2and_1/a_13_5# vdd 0.09fF
+C172 sumblock_0/xor1_2/a_32_n47# p1 0.10fF
+C173 vdd gnd 0.01fF
+C174 sum3 gnd 0.06fF
+C175 vdd g0 0.08fF
+C176 sum0 sumblock_0/xor1_3/a_n12_n44# 0.12fF
+C177 vdd p3 0.14fF
+C178 p0 cla_0/4and_0/a_13_5# 0.16fF
+C179 gnd vdd 0.66fF
+C180 vdd gnd 0.01fF
+C181 vdd p2 0.07fF
+C182 b0 vdd 0.05fF
+C183 vdd p2 0.07fF
+C184 vdd t3_4and 0.06fF
+C185 sum1 vdd 0.02fF
+C186 p2 vdd 0.01fF
+C187 sumblock_0/xor1_1/a_n12_n44# p2 0.08fF
+C188 a2 p2 0.01fF
+C189 propgen_0/xor1_1/a_n12_n44# vdd 0.12fF
+C190 propgen_0/2and_0/a_13_5# b3 0.17fF
+C191 vdd gnd 0.03fF
+C192 p1 p3 0.17fF
+C193 t3_2and gnd 0.06fF
+C194 p1 gnd 0.05fF
+C195 cla_0/3and_0/a_13_5# t2_3and 0.05fF
+C196 vdd g2 0.07fF
+C197 a0 gnd 0.01fF
+C198 vdd gnd 0.01fF
+C199 gnd gnd 0.06fF
+C200 vdd gnd 0.05fF
+C201 c_in p1 0.08fF
+C202 sum0 vdd 0.03fF
+C203 vdd vdd 0.05fF
+C204 g1 p3 0.08fF
+C205 gnd g2 0.16fF
+C206 cla_0/4or_0/a_0_n37# gnd 0.25fF
+C207 a2 gnd 0.10fF
+C208 vdd t3_2and 0.03fF
+C209 vdd cla_0/3and_0/a_13_5# 0.08fF
+C210 gnd gnd 0.01fF
+C211 a1 gnd 0.01fF
+C212 gnd gnd 0.12fF
+C213 vdd a0 0.08fF
+C214 p3 p2 1.45fF
+C215 cla_0/5or_0/a_0_n44# vdd 0.09fF
+C216 sum3 vdd 0.06fF
+C217 vdd cla_0/2and_3/a_13_5# 0.02fF
+C218 b0 gnd 0.12fF
+C219 propgen_0/xor1_3/a_32_n47# p0 0.09fF
+C220 g0 p3 0.08fF
+C221 sumblock_0/xor1_1/a_n12_n44# vdd 0.12fF
+C222 b3 gnd 0.07fF
+C223 propgen_0/xor1_0/a_n12_n44# gnd 0.08fF
+C224 vdd p0 0.14fF
+C225 vdd gnd 0.05fF
+C226 sum0 vdd 0.04fF
+C227 p0 gnd 0.07fF
+C228 vdd gnd 0.15fF
+C229 vdd p1 0.08fF
+C230 p1 vdd 0.07fF
+C231 t4_5and vdd 0.03fF
+C232 vdd a0 0.14fF
+C233 vdd b3 0.08fF
+C234 gnd p3 0.06fF
+C235 g1 gnd 0.07fF
+C236 gnd gnd 0.03fF
+C237 sum0 gnd 0.01fF
+C238 vdd gnd 0.07fF
+C239 vdd propgen_0/xor1_0/a_n12_n44# 0.09fF
+C240 g1 g2 1.17fF
+C241 gnd p1 0.09fF
+C242 gnd gnd 0.18fF
+C243 vdd vdd 0.06fF
+C244 gnd vdd 0.18fF
+C245 vdd t3_2and 0.06fF
+C246 vdd t3_3and 0.06fF
+C247 cla_0/3and_1/a_13_5# gnd 0.02fF
+C248 p1 gnd 0.11fF
+C249 gnd p1 0.12fF
+C250 vdd t3_4and 0.06fF
+C251 propgen_0/2and_2/a_13_5# vdd 0.02fF
+C252 c_in p0 1.24fF
+C253 vdd g0 0.03fF
+C254 sum0 gnd 0.05fF
+C255 gnd p3 0.08fF
+C256 gnd gnd 0.22fF
+C257 vdd vdd 0.12fF
+C258 b1 propgen_0/xor1_2/a_n12_n44# 0.20fF
+C259 a1 propgen_0/xor1_2/a_32_n47# 0.10fF
+C260 carry0 sum1 0.10fF
+C261 p0 gnd 0.06fF
+C262 gnd gnd 0.35fF
+C263 p3 gnd 0.07fF
+C264 g1 gnd 0.07fF
+C265 gnd p3 0.06fF
+C266 gnd gnd 0.43fF
+C267 b1 gnd 0.03fF
+C268 g2 gnd 0.06fF
+C269 g3 p1 0.16fF
+C270 p1 cla_0/4and_0/a_13_5# 0.08fF
+C271 vdd g0 0.08fF
+C272 gnd t2_2and 0.07fF
+C273 gnd gnd 0.01fF
+C274 vdd g1 0.06fF
+C275 vdd p3 0.07fF
+C276 vdd sumblock_0/xor1_3/a_32_n47# 0.09fF
+C277 vdd p1 0.08fF
+C278 cla_0/3and_2/a_13_5# t4_3and 0.05fF
+C279 sumblock_0/xor1_1/a_32_n47# p2 0.10fF
+C280 vdd vdd 0.01fF
+C281 gnd gnd 1.83fF
+C282 t4_4and t4_2and 0.08fF
+C283 propgen_0/xor1_1/a_32_n47# vdd 0.06fF
+C284 b2 p2 0.10fF
+C285 vdd vdd 0.08fF
+C286 cla_0/5and_0/a_13_5# vdd 0.21fF
+C287 vdd t4_5and 0.06fF
+C288 vdd p2 0.08fF
+C289 vdd t2_3and 0.06fF
+C290 gnd g2 0.07fF
+C291 b0 gnd 0.01fF
+C292 vdd vdd 0.05fF
+C293 vdd gnd 0.07fF
+C294 vdd gnd 0.07fF
+C295 p1 gnd 0.05fF
+C296 vdd vdd 0.06fF
+C297 gnd p0 0.08fF
+C298 cla_0/4or_0/a_0_n37# g2 0.38fF
+C299 vdd cla_0/3and_2/a_13_5# 0.08fF
+C300 vdd gnd 0.01fF
+C301 vdd gnd 0.09fF
+C302 gnd g2 0.06fF
+C303 p0 vdd 0.64fF
+C304 vdd gnd 0.05fF
+C305 sum0 vdd 0.06fF
+C306 vdd sum2 0.06fF
+C307 b2 gnd 0.20fF
+C308 g1 t2_2and 0.77fF
+C309 cla_0/3and_2/a_13_5# gnd 0.02fF
+C310 p1 vdd 0.08fF
+C311 c_in cla_0/3and_0/a_13_5# 0.04fF
+C312 p0 p1 0.87fF
+C313 vdd vdd 0.03fF
+C314 p1 gnd 0.17fF
+C315 b1 gnd 0.01fF
+C316 gnd gnd 0.04fF
+C317 c_in vdd 0.04fF
+C318 gnd gnd 0.13fF
+C319 gnd gnd 0.15fF
+C320 g2 p3 0.78fF
+C321 vdd g2 0.06fF
+C322 vdd gnd 0.08fF
+C323 propgen_0/xor1_3/a_n12_n44# gnd 0.08fF
+C324 vdd vdd 0.08fF
+C325 vdd cla_0/4and_1/a_13_5# 0.08fF
+C326 sumblock_0/xor1_1/a_32_n47# vdd 0.06fF
+C327 p3 gnd 0.03fF
+C328 vdd gnd 0.05fF
+C329 propgen_0/xor1_0/a_32_n47# gnd 0.04fF
+C330 g1 cla_0/3or_0/a_0_n30# 0.30fF
+C331 gnd p3 0.08fF
+C332 sum2 vdd 0.02fF
+C333 g0 vdd 0.06fF
+C334 t2_3and t2_2and 0.36fF
+C335 gnd vdd 0.31fF
+C336 p3 cla_0/5and_0/a_13_5# 0.12fF
+C337 gnd vdd 0.88fF
+C338 vdd b0 0.13fF
+C339 vdd g0 0.08fF
+C340 g0 gnd 0.03fF
+C341 a3 b3 4.18fF
+C342 carry2 vdd 0.13fF
+C343 sum3 gnd 0.04fF
+C344 vdd propgen_0/xor1_0/a_32_n47# 0.09fF
+C345 t1_2and g0 0.31fF
+C346 propgen_0/2and_3/a_13_5# a0 0.04fF
+C347 c_in vdd 0.13fF
+C348 vdd gnd 0.46fF
+C349 gnd vdd 0.02fF
+C350 gnd vdd 0.37fF
+C351 c_in p2 0.08fF
+C352 gnd t3_4and 0.06fF
+C353 vdd p1 0.17fF
+C354 vdd vdd 0.03fF
+C355 gnd gnd 0.15fF
+C356 gnd vdd 0.09fF
+C357 p3 vdd 0.06fF
+C358 c_in p1 0.08fF
+C359 sumblock_0/xor1_3/a_n12_n44# vdd 0.12fF
+C360 cla_0/2and_1/a_13_5# vdd 0.09fF
+C361 gnd p1 0.07fF
+C362 gnd gnd 0.05fF
+C363 vdd p3 0.06fF
+C364 g2 gnd 0.04fF
+C365 vdd p1 0.08fF
+C366 gnd gnd 0.10fF
+C367 a1 vdd 0.23fF
+C368 b1 propgen_0/xor1_2/a_32_n47# 0.28fF
+C369 vdd p1 0.50fF
+C370 vdd t3_3and 0.03fF
+C371 gnd sumblock_0/xor1_3/a_32_n47# 0.04fF
+C372 p0 gnd 0.04fF
+C373 p2 vdd 0.01fF
+C374 g1 gnd 0.32fF
+C375 vdd p1 0.08fF
+C376 sumblock_0/xor1_2/a_n12_n44# vdd 0.09fF
+C377 g1 vdd 0.08fF
+C378 c_in gnd 0.05fF
+C379 vdd gnd 0.05fF
+C380 gnd p1 0.07fF
+C381 propgen_0/2and_3/a_13_5# vdd 0.09fF
+C382 propgen_0/2and_0/a_13_5# p3 0.05fF
+C383 sum1 gnd 0.02fF
+C384 g3 vdd 0.07fF
+C385 gnd gnd 0.01fF
+C386 vdd g2 0.08fF
+C387 propgen_0/2and_2/a_13_5# gnd 0.02fF
+C388 vdd propgen_0/2and_0/a_13_5# 0.09fF
+C389 carry1 p2 0.66fF
+C390 vdd t4_3and 0.06fF
+C391 sumblock_0/xor1_0/a_32_n47# sum3 0.09fF
+C392 g2 gnd 0.07fF
+C393 a2 gnd 0.08fF
+C394 propgen_0/xor1_1/a_n12_n44# p2 0.12fF
+C395 sum2 gnd 0.06fF
+C396 a1 gnd 0.19fF
+C397 propgen_0/2and_2/a_13_5# b1 0.17fF
+C398 gnd sum0 0.11fF
+C399 vdd gnd 0.02fF
+C400 p1 cla_0/4and_1/a_13_5# 0.16fF
+C401 cla_0/3and_0/a_13_5# gnd 0.02fF
+C402 vdd gnd 0.06fF
+C403 a0 gnd 0.01fF
+C404 t2_2and vdd 0.06fF
+C405 gnd p2 0.08fF
+C406 c_in g0 0.10fF
+C407 vdd vdd 0.07fF
+C408 g2 p1 0.16fF
+C409 cla_0/4and_1/a_13_5# vdd 0.17fF
+C410 g1 cla_0/3and_2/a_13_5# 0.04fF
+C411 p2 p3 1.38fF
+C412 vdd vdd 0.03fF
+C413 p3 p0 0.08fF
+C414 t4_3and g3 0.08fF
+C415 gnd gnd 0.13fF
+C416 a1 gnd 0.05fF
+C417 cla_0/3or_0/a_0_n30# vdd 0.09fF
+C418 sum0 vdd 0.06fF
+C419 vdd vdd 0.06fF
+C420 vdd cla_0/2and_3/a_13_5# 0.08fF
+C421 gnd gnd 0.08fF
+C422 propgen_0/xor1_3/a_32_n47# gnd 0.04fF
+C423 gnd gnd 0.03fF
+C424 g0 cla_0/4and_1/a_13_5# 0.04fF
+C425 vdd p1 0.09fF
+C426 gnd gnd 0.01fF
+C427 vdd vdd 0.06fF
+C428 vdd vdd 0.12fF
+C429 p0 vdd 0.07fF
+C430 c_in gnd 0.12fF
+C431 c_in vdd 0.13fF
+C432 vdd p2 0.08fF
+C433 p2 p1 1.47fF
+C434 vdd c_in 0.08fF
+C435 gnd p0 0.11fF
+C436 p1 gnd 0.36fF
+C437 t4_5and gnd 0.06fF
+C438 a0 b0 4.17fF
+C439 vdd propgen_0/xor1_3/a_n12_n44# 0.09fF
+C440 gnd gnd 0.03fF
+C441 p2 vdd 0.08fF
+C442 a3 propgen_0/xor1_0/a_n12_n44# 0.08fF
+C443 vdd t4_2and 0.06fF
+C444 t3_2and cla_0/4or_0/a_0_n37# 0.08fF
+C445 propgen_0/2and_0/a_13_5# vdd 0.08fF
+C446 p2 gnd 0.05fF
+C447 g2 vdd 0.06fF
+C448 vdd vdd 0.12fF
+C449 gnd gnd 0.14fF
+C450 propgen_0/2and_1/a_13_5# vdd 0.08fF
+C451 sumblock_0/xor1_2/a_n12_n44# gnd 0.08fF
+C452 sumblock_0/xor1_2/a_n12_n44# carry0 0.20fF
+C453 g3 vdd 0.01fF
+C454 gnd p1 0.11fF
+C455 p1 vdd 0.02fF
+C456 gnd gnd 0.10fF
+C457 vdd g0 0.08fF
+C458 gnd gnd 0.14fF
+C459 vdd t3_2and 0.06fF
+C460 carry0 vdd 0.04fF
+C461 vdd gnd 0.04fF
+C462 t4_5and gnd 0.06fF
+C463 p2 gnd 0.02fF
+C464 vdd g0 0.06fF
+C465 vdd p1 0.10fF
+C466 c_in cla_0/5and_0/a_13_5# 0.04fF
+C467 t4_2and gnd 0.06fF
+C468 t3_4and gnd 0.06fF
+C469 cla_0/5and_0/a_13_5# vdd 0.08fF
+C470 p2 cla_0/3and_1/a_13_5# 0.12fF
+C471 sum2 gnd 0.01fF
+C472 p1 gnd 0.04fF
+C473 vdd gnd 0.02fF
+C474 gnd gnd 0.03fF
+C475 gnd t4_4and 0.06fF
+C476 cla_0/3or_0/a_0_n30# sum1 0.05fF
+C477 gnd vdd 0.05fF
+C478 vdd vdd 0.06fF
+C479 vdd cla_0/2and_1/a_13_5# 0.02fF
+C480 sum0 vdd 0.10fF
+C481 gnd gnd 0.03fF
+C482 gnd p1 0.09fF
+C483 p2 cla_0/4and_0/a_13_5# 0.12fF
+C484 vdd vdd 0.06fF
+C485 gnd gnd 0.07fF
+C486 vdd p2 0.06fF
+C487 sumblock_0/xor1_0/a_n12_n44# sum3 0.12fF
+C488 carry2 gnd 0.12fF
+C489 sumblock_0/xor1_1/a_n12_n44# carry1 0.20fF
+C490 p3 gnd 0.12fF
+C491 vdd vdd 0.05fF
+C492 propgen_0/2and_1/a_13_5# b2 0.17fF
+C493 sum2 g2 0.03fF
+C494 sum3 vdd 0.03fF
+C495 b2 gnd 0.12fF
+C496 propgen_0/xor1_1/a_32_n47# p2 0.09fF
+C497 p2 vdd 0.04fF
+C498 b1 gnd 0.28fF
+C499 vdd gnd 0.03fF
+C500 gnd g0 0.07fF
+C501 sumblock_0/xor1_1/a_n12_n44# gnd 0.08fF
+C502 b0 gnd 0.01fF
+C503 gnd gnd 0.04fF
+C504 p0 gnd 0.03fF
+C505 cla_0/2and_0/a_13_5# t1_2and 0.05fF
+C506 vdd vdd 0.07fF
+C507 b2 a3 0.23fF
+C508 vdd t3_3and 0.06fF
+C509 gnd gnd 0.02fF
+C510 gnd vdd 0.04fF
+C511 p1 vdd 0.14fF
+C512 p3 gnd 0.04fF
+C513 g2 vdd 0.07fF
+C514 vdd a2 0.14fF
+C515 gnd vdd 0.08fF
+C516 cla_0/2and_2/a_13_5# vdd 0.09fF
+C517 vdd t2_3and 0.03fF
+C518 p0 cla_0/3and_0/a_13_5# 0.16fF
+C519 gnd p2 0.07fF
+C520 gnd p1 0.17fF
+C521 b1 gnd 0.01fF
+C522 t1_2and cla_0/2or_0/a_0_n30# 0.19fF
+C523 g2 cla_0/2and_3/a_13_5# 0.04fF
+C524 vdd g1 0.08fF
+C525 vdd vdd 0.03fF
+C526 gnd gnd 0.03fF
+C527 vdd sum1 0.06fF
+C528 gnd p3 0.03fF
+C529 p1 vdd 0.09fF
+C530 p1 gnd 0.21fF
+C531 a2 gnd 0.05fF
+C532 vdd propgen_0/xor1_3/a_32_n47# 0.09fF
+C533 a0 propgen_0/xor1_3/a_n12_n44# 0.08fF
+C534 vdd vdd 0.06fF
+C535 g1 gnd 0.07fF
+C536 b3 propgen_0/xor1_0/a_n12_n44# 0.23fF
+C537 a3 propgen_0/xor1_0/a_32_n47# 0.10fF
+C538 gnd vdd 0.03fF
+C539 c_in p0 0.68fF
+C540 sum0 vdd 0.02fF
+C541 gnd gnd 0.03fF
+C542 vdd gnd 0.04fF
+C543 cla_0/5or_0/a_0_n44# t4_3and 0.08fF
+C544 a3 vdd 0.04fF
+C545 cla_0/5and_0/a_13_5# vdd 0.08fF
+C546 carry2 gnd 0.02fF
+C547 sumblock_0/xor1_2/a_32_n47# vdd 0.09fF
+C548 g3 gnd 0.01fF
+C549 vdd gnd 0.05fF
+C550 p1 a1 0.01fF
+C551 gnd gnd 0.05fF
+C552 cla_0/2and_3/a_13_5# vdd 0.09fF
+C553 p3 gnd 0.02fF
+C554 c_in p2 0.08fF
+C555 p0 sumblock_0/xor1_3/a_32_n47# 0.10fF
+C556 cla_0/2and_1/a_13_5# t2_2and 0.05fF
+C557 p1 gnd 0.16fF
+C558 vdd vdd 0.03fF
+C559 gnd vdd 0.11fF
+C560 propgen_0/xor1_2/a_n12_n44# vdd 0.12fF
+C561 vdd gnd 0.04fF
+C562 cla_0/5or_0/a_0_n44# g3 0.48fF
+C563 carry2 p3 0.67fF
+C564 a0 gnd 0.02fF
+C565 a3 gnd 0.02fF
+C566 a3 b3 0.24fF
+C567 gnd gnd 0.02fF
+C568 vdd vdd 0.06fF
+C569 g2 vdd 0.02fF
+C570 vdd gnd 0.03fF
+C571 vdd p2 0.08fF
+C572 b0 a0 0.23fF
+C573 a0 gnd 0.29fF
+C574 p1 gnd 0.08fF
+C575 carry0 p1 1.30fF
+C576 gnd gnd 0.03fF
+C577 g3 gnd 0.08fF
+C578 b2 gnd 0.07fF
+C579 sumblock_0/xor1_1/a_32_n47# carry1 0.28fF
+C580 gnd vdd 0.09fF
+C581 g1 gnd 0.06fF
+C582 gnd gnd 0.09fF
+C583 propgen_0/xor1_1/a_n12_n44# gnd 0.08fF
+C584 a1 gnd 0.02fF
+C585 sumblock_0/xor1_0/a_32_n47# vdd 0.09fF
+C586 sumblock_0/xor1_1/a_32_n47# gnd 0.04fF
+C587 gnd vdd 0.07fF
+C588 vdd gnd 0.13fF
+C589 a0 gnd 0.01fF
+C590 vdd vdd 0.03fF
+C591 vdd p2 0.14fF
+C592 gnd p1 0.06fF
+C593 cla_0/4and_1/a_13_5# t4_4and 0.05fF
+C594 vdd t4_3and 0.03fF
+C595 p2 cla_0/3and_2/a_13_5# 0.16fF
+C596 vdd gnd 0.07fF
+C597 t4_4and vdd 0.06fF
+C598 t4_2and cla_0/2and_3/a_13_5# 0.05fF
+C599 gnd vdd 0.76fF
+C600 vdd b2 0.13fF
+C601 vdd sumblock_0/xor1_3/a_n12_n44# 0.09fF
+C602 vdd p0 0.08fF
+C603 g1 vdd 0.06fF
+C604 b2 gnd 0.03fF
+C605 t4_3and gnd 0.06fF
+C606 p1 g0 0.92fF
+C607 p2 gnd 0.03fF
+C608 vdd p1 0.16fF
+C609 vdd cla_0/2and_0/a_13_5# 0.08fF
+C610 vdd gnd 0.07fF
+C611 b2 vdd 0.08fF
+C612 c_in p0 0.72fF
+C613 vdd vdd 0.03fF
+C614 t3_4and g2 0.08fF
+C615 gnd vdd 0.08fF
+C616 t4_5and t4_3and 0.08fF
+C617 cla_0/2and_0/a_13_5# vdd 0.09fF
+C618 gnd p2 0.08fF
+C619 vdd gnd 0.05fF
+C620 propgen_0/2and_0/a_13_5# gnd 0.02fF
+C621 sumblock_0/xor1_2/a_32_n47# gnd 0.04fF
+C622 carry0 sumblock_0/xor1_2/a_32_n47# 0.28fF
+C623 vdd p0 0.08fF
+C624 p1 gnd 0.12fF
+C625 p0 gnd 0.11fF
+C626 vdd cla_0/2and_2/a_13_5# 0.02fF
+C627 cla_0/3and_1/a_13_5# p1 0.16fF
+C628 vdd p0 0.08fF
+C629 gnd t2_3and 0.02fF
+C630 g0 gnd 0.01fF
+C631 vdd gnd 0.02fF
+C632 b2 gnd 0.06fF
+C633 g0 vdd 0.06fF
+C634 vdd vdd 0.12fF
+C635 vdd cla_0/2or_0/a_0_n30# 0.09fF
+C636 gnd vdd 0.30fF
+C637 vdd vdd 0.12fF
+C638 b0 propgen_0/xor1_3/a_n12_n44# 0.20fF
+C639 a0 propgen_0/xor1_3/a_32_n47# 0.10fF
+C640 sumblock_0/xor1_2/a_n12_n44# vdd 0.12fF
+C641 a3 vdd 0.23fF
+C642 b3 propgen_0/xor1_0/a_32_n47# 0.28fF
+C643 t3_3and cla_0/4or_0/a_0_n37# 0.08fF
+C644 t4_5and g3 0.08fF
+C645 vdd p3 0.02fF
+C646 b3 vdd 0.05fF
+C647 gnd gnd 0.29fF
+C648 propgen_0/2and_1/a_13_5# a3 0.04fF
+C649 gnd gnd 0.08fF
+C650 t3_3and gnd 0.06fF
+C651 p0 gnd 0.07fF
+C652 vdd p3 0.23fF
+C653 gnd vdd 1.29fF
+C654 p1 b1 0.10fF
+C655 gnd gnd 0.11fF
+C656 vdd t3_3and 0.06fF
+C657 p1 gnd 0.03fF
+C658 a3 gnd 0.05fF
+C659 propgen_0/xor1_2/a_32_n47# vdd 0.06fF
+C660 vdd vdd 0.03fF
+C661 cla_0/5and_0/a_13_5# gnd 0.02fF
+C662 g0 gnd 0.09fF
+C663 p2 gnd 0.04fF
+C664 gnd p1 0.07fF
+C665 gnd gnd 0.33fF
+C666 a1 vdd 0.08fF
+C667 p2 gnd 0.07fF
+C668 t4_4and gnd 0.06fF
+C669 t4_2and vdd 0.03fF
+C670 vdd vdd 0.06fF
+C671 vdd cla_0/2and_1/a_13_5# 0.08fF
+C672 vdd p2 0.09fF
+C673 g2 gnd 0.01fF
+C674 vdd p1 0.07fF
+C675 b0 gnd 0.37fF
+C676 c_in sumblock_0/xor1_3/a_32_n47# 0.28fF
+C677 gnd t1_2and 0.09fF
+C678 g3 gnd 2.94fF
+C679 vdd p3 0.06fF
+C680 g1 gnd 0.07fF
+C681 gnd vdd 0.02fF
+C682 gnd gnd 0.04fF
+C683 vdd gnd 0.06fF
+C684 gnd sumblock_0/xor1_3/a_n12_n44# 0.08fF
+C685 vdd g1 0.06fF
+C686 vdd gnd 0.07fF
+C687 sumblock_0/xor1_0/a_n12_n44# vdd 0.09fF
+C688 propgen_0/xor1_1/a_32_n47# gnd 0.04fF
+C689 sumblock_0/xor1_2/a_n12_n44# sum1 0.12fF
+C690 gnd carry1 0.12fF
+C691 t2_3and gnd 0.06fF
+C692 vdd g0 0.07fF
+C693 sumblock_0/xor1_1/a_n12_n44# vdd 0.09fF
+C694 gnd vdd 0.08fF
+C695 gnd gnd 0.42fF
+C696 gnd gnd 0.13fF
+C697 vdd gnd 0.14fF
+C698 b0 gnd 0.01fF
+C699 propgen_0/2and_3/a_13_5# vdd 0.02fF
+C700 c_in p3 0.08fF
+C701 cla_0/2and_0/a_13_5# gnd 0.02fF
+C702 vdd gnd 0.07fF
+C703 vdd t4_5and 0.06fF
+C704 cla_0/4and_1/a_13_5# gnd 0.02fF
+C705 gnd gnd 0.16fF
+C706 g2 gnd 0.08fF
+C707 a2 b2 4.16fF
+C708 vdd propgen_0/xor1_1/a_n12_n44# 0.09fF
+C709 vdd vdd 0.06fF
+C710 vdd p1 0.08fF
+C711 vdd cla_0/4and_0/a_13_5# 0.08fF
+C712 gnd p0 0.11fF
+C713 cla_0/2and_2/a_13_5# t3_2and 0.05fF
+C714 p1 cla_0/3and_0/a_13_5# 0.12fF
+C715 gnd g0 0.07fF
+C716 gnd gnd 0.06fF
+C717 a1 gnd 0.05fF
+C718 vdd vdd 0.12fF
+C719 g2 vdd 0.03fF
+C720 vdd vdd 0.07fF
+C721 vdd t4_4and 0.03fF
+C722 p2 p3 1.53fF
+C723 vdd p2 0.08fF
+C724 vdd g2 0.06fF
+C725 gnd cla_0/2and_3/a_13_5# 0.02fF
+C726 gnd gnd 0.07fF
+C727 a2 vdd 0.04fF
+C728 vdd t3_3and 0.06fF
+C729 a0 vdd 0.23fF
+C730 b0 propgen_0/xor1_3/a_32_n47# 0.28fF
+C731 p2 p1 1.45fF
+C732 g1 gnd 0.17fF
+C733 t4_3and gnd 0.06fF
+C734 vdd cla_0/2or_0/a_0_n30# 0.13fF
+C735 gnd gnd 0.08fF
+C736 propgen_0/2and_3/a_13_5# gnd 0.02fF
+C737 gnd gnd 0.03fF
+C738 vdd p1 0.08fF
+C739 vdd p2 0.06fF
+C740 gnd sumblock_0/xor1_0/a_32_n47# 0.04fF
+C741 vdd vdd 0.08fF
+C742 gnd p3 0.06fF
+C743 p1 gnd 0.08fF
+C744 gnd gnd 0.03fF
+C745 p1 propgen_0/xor1_2/a_n12_n44# 0.12fF
+C746 t3_4and t3_2and 0.44fF
+C747 propgen_0/2and_1/a_13_5# gnd 0.02fF
+C748 g0 c_in 0.16fF
+C749 c_in cla_0/4and_0/a_13_5# 0.04fF
+C750 carry0 gnd 0.05fF
+C751 vdd t2_2and 0.06fF
+C752 cla_0/2and_1/a_13_5# gnd 0.02fF
+C753 b3 gnd 0.01fF
+C754 sum3 vdd 0.02fF
+C755 propgen_0/2and_1/a_13_5# vdd 0.02fF
+C756 a1 gnd 0.08fF
+C757 vdd gnd 0.04fF
+C758 t4_2and t4_3and 1.01fF
+C759 p1 vdd 0.23fF
+C760 gnd gnd 0.15fF
+C761 g1 vdd 0.06fF
+C762 c_in t1_2and 0.02fF
+C763 g0 p1 0.68fF
+C764 vdd vdd 0.08fF
+C765 vdd g1 0.09fF
+C766 gnd p2 0.07fF
+C767 vdd gnd 0.05fF
+C768 gnd gnd 0.04fF
+C769 gnd g0 0.11fF
+C770 vdd a3 0.08fF
+C771 vdd cla_0/3and_1/a_13_5# 0.05fF
+C772 sum2 gnd 0.02fF
+C773 gnd g1 0.13fF
+C774 t4_2and g3 1.27fF
+C775 vdd vdd 0.01fF
+C776 gnd gnd 0.02fF
+C777 p3 vdd 0.08fF
+C778 a3 gnd 0.02fF
+C779 vdd vdd 0.05fF
+C780 gnd g1 0.02fF
+C781 gnd gnd 0.07fF
+C782 gnd gnd 0.11fF
+C783 p2 gnd 0.05fF
+C784 p0 p1 1.60fF
+C785 gnd vdd 0.39fF
+C786 sumblock_0/xor1_1/a_32_n47# vdd 0.09fF
+C787 gnd gnd 0.14fF
+C788 a0 gnd 0.05fF
+C789 vdd gnd 0.08fF
+C790 gnd vdd 0.04fF
+C791 t2_2and gnd 0.04fF
+C792 vdd gnd 0.03fF
+C793 vdd t4_4and 0.06fF
+C794 p3 cla_0/3and_2/a_13_5# 0.12fF
+C795 vdd gnd 0.06fF
+C796 gnd gnd 0.08fF
+C797 t4_2and vdd 0.06fF
+C798 vdd p1 0.16fF
+C799 g2 gnd 0.07fF
+C800 vdd propgen_0/xor1_1/a_32_n47# 0.09fF
+C801 a2 propgen_0/xor1_1/a_n12_n44# 0.08fF
+C802 sum0 p0 0.01fF
+C803 gnd sum1 0.06fF
+C804 a1 b1 0.23fF
+C805 g1 vdd 0.03fF
+C806 propgen_0/2and_0/a_13_5# vdd 0.02fF
+C807 sumblock_0/xor1_2/a_32_n47# vdd 0.06fF
+C808 gnd p0 0.10fF
+C809 p3 gnd 0.03fF
+C810 cla_0/2and_2/a_13_5# gnd 0.02fF
+C811 b1 gnd 0.06fF
+C812 t3_2and g2 0.08fF
+C813 gnd gnd 0.09fF
+C814 vdd gnd 0.05fF
+C815 c_in p0 0.66fF
+C816 sumblock_0/xor1_0/a_32_n47# p3 0.10fF
+C817 p1 sum1 0.01fF
+C818 vdd t1_2and 0.06fF
+C819 vdd vdd 0.06fF
+C820 vdd cla_0/2and_2/a_13_5# 0.08fF
+C821 vdd p1 0.08fF
+C822 b2 vdd 0.05fF
+C823 cla_0/3or_0/a_0_n30# t2_2and 0.08fF
+C824 sum2 p2 0.01fF
+C825 gnd gnd 1.44fF
+C826 gnd vdd 0.42fF
+C827 vdd p0 0.02fF
+C828 vdd p2 0.08fF
+C829 p2 gnd 0.03fF
+C830 gnd p2 0.10fF
+C831 a3 p3 0.01fF
+C832 propgen_0/xor1_0/a_n12_n44# vdd 0.12fF
+C833 sumblock_0/xor1_0/a_n12_n44# gnd 0.08fF
+C834 g1 t2_3and 0.08fF
+C835 vdd vdd 0.16fF
+C836 vdd vdd 0.18fF
+C837 p1 gnd 0.07fF
+C838 a2 gnd 0.01fF
+C839 gnd gnd 0.44fF
+C840 vdd cla_0/2or_0/a_0_n30# 0.04fF
+C841 g3 gnd 0.01fF
+C842 cla_0/5and_0/a_13_5# p1 0.08fF
+C843 vdd p1 0.82fF
+C844 p1 propgen_0/xor1_2/a_32_n47# 0.09fF
+C845 gnd gnd 1.21fF
+C846 gnd gnd 0.11fF
+C847 vdd gnd 0.11fF
+C848 g2 gnd 0.07fF
+C849 gnd gnd 0.08fF
+C850 b1 gnd 0.12fF
+C851 cla_0/3and_1/a_13_5# vdd 0.13fF
+C852 g0 gnd 0.11fF
+C853 gnd gnd 0.08fF
+C854 gnd gnd 0.05fF
+C855 vdd gnd 0.02fF
+C856 p2 gnd 0.12fF
+C857 sum0 sumblock_0/xor1_3/a_32_n47# 0.09fF
+C858 sumblock_0/xor1_2/a_32_n47# sum1 0.09fF
+C859 vdd vdd 0.03fF
+C860 g0 cla_0/2and_1/a_13_5# 0.04fF
+C861 g1 p2 0.84fF
+C862 gnd p3 0.08fF
+C863 gnd g1 0.07fF
+C864 t4_5and cla_0/5and_0/a_13_5# 0.05fF
+C865 vdd a1 0.14fF
+C866 p0 sumblock_0/xor1_3/a_n12_n44# 0.08fF
+C867 cla_0/4and_0/a_13_5# vdd 0.17fF
+C868 sum1 gnd 0.04fF
+C869 gnd g1 0.06fF
+C870 g1 gnd 0.06fF
+C871 vdd gnd 0.01fF
+C872 carry0 gnd 0.04fF
+C873 vdd gnd 0.04fF
+C874 vdd gnd 0.15fF
+C875 vdd vdd 0.05fF
+C876 vdd carry1 0.13fF
+C877 gnd gnd 0.07fF
+C878 b0 gnd 0.01fF
+C879 a0 gnd 0.05fF
+C880 propgen_0/2and_1/a_13_5# g2 0.05fF
+C881 cla_0/3or_0/a_0_n30# vdd 0.04fF
+C882 p3 gnd 0.05fF
+C883 g3 gnd 0.03fF
+C884 vdd g0 0.07fF
+C885 vdd gnd 0.03fF
+C886 vdd vdd 0.12fF
+C887 b2 propgen_0/xor1_1/a_n12_n44# 0.20fF
+C888 a2 propgen_0/xor1_1/a_32_n47# 0.10fF
+C889 vdd vdd 0.03fF
+C890 vdd p2 0.08fF
+C891 sum0 cla_0/2or_0/a_0_n30# 0.05fF
+C892 gnd t2_3and 0.06fF
+C893 g1 vdd 0.06fF
+C894 cla_0/5or_0/a_0_n44# gnd 0.33fF
+C895 vdd t3_2and 0.06fF
+C896 a1 vdd 0.04fF
+C897 gnd gnd 0.35fF
+C898 vdd t1_2and 0.03fF
+C899 vdd gnd 0.03fF
+C900 vdd vdd 0.05fF
+C901 sumblock_0/xor1_0/a_n12_n44# p3 0.08fF
+C902 c_in vdd 0.08fF
+C903 cla_0/5or_0/a_0_n44# t4_2and 0.08fF
+C904 gnd gnd 0.08fF
+C905 vdd gnd 0.08fF
+C906 p2 cla_0/4and_1/a_13_5# 0.08fF
+C907 t1_2and vdd 0.06fF
+C908 vdd p3 0.08fF
+C909 a1 propgen_0/2and_2/a_13_5# 0.04fF
+C910 p3 gnd 0.06fF
+C911 p1 p0 0.81fF
+C912 c_in p0 0.57fF
+C913 gnd g0 0.09fF
+C914 gnd gnd 0.06fF
+C915 sumblock_0/xor1_1/a_n12_n44# sum2 0.12fF
+C916 t2_3and vdd 0.06fF
+C917 vdd p0 0.08fF
+C918 vdd gnd 0.02fF
+C919 vdd b0 0.08fF
+C920 sum0 c_in 0.10fF
+C921 t4_4and t4_3and 0.92fF
+C922 vdd vdd 0.05fF
+C923 a0 p0 0.01fF
+C924 propgen_0/xor1_3/a_n12_n44# vdd 0.12fF
+C925 vdd p3 0.08fF
+C926 sum1 vdd 0.04fF
+C927 gnd gnd 0.03fF
+C928 p3 gnd 0.03fF
+C929 g1 gnd 0.07fF
+C930 vdd c_in 0.08fF
+C931 propgen_0/xor1_0/a_32_n47# vdd 0.06fF
+C932 b3 p3 0.10fF
+C933 c_in vdd 0.08fF
+C934 gnd vdd 0.05fF
+C935 c_in gnd 0.15fF
+C936 g2 vdd 0.06fF
+C937 b2 gnd 0.01fF
+C938 vdd vdd 0.05fF
+C939 gnd p3 0.08fF
+C940 vdd t4_2and 0.06fF
+C941 sum1 gnd 0.01fF
+C942 p1 gnd 0.08fF
+C943 t4_4and g3 0.08fF
+C944 vdd cla_0/4or_0/a_0_n37# 0.09fF
+C945 t3_4and t3_3and 0.08fF
+C946 carry0 vdd 0.13fF
+C947 gnd t2_2and 0.07fF
+C948 gnd p3 0.06fF
+C949 cla_0/5or_0/a_0_n44# vdd 0.05fF
+C950 vdd propgen_0/2and_2/a_13_5# 0.09fF
+C951 gnd gnd 0.10fF
+C952 propgen_0/xor1_2/a_n12_n44# gnd 0.08fF
+C953 vdd gnd 0.07fF
+C954 p2 gnd 0.05fF
+C955 gnd vdd 0.09fF
+C956 gnd gnd 0.15fF
+C957 gnd gnd 0.07fF
+C958 gnd gnd 0.05fF
+C959 g1 gnd 0.06fF
+C960 b0 gnd 0.03fF
+C961 sum3 cla_0/5or_0/a_0_n44# 0.05fF
+C962 gnd gnd 0.05fF
+C963 vdd p2 0.09fF
+C964 vdd g1 0.07fF
+C965 gnd p3 0.07fF
+C966 g2 gnd 0.01fF
+C967 gnd vdd 0.76fF
+C968 vdd b1 0.13fF
+C969 cla_0/4and_0/a_13_5# t3_4and 0.05fF
+C970 p2 gnd 0.04fF
+C971 gnd t4_2and 0.06fF
+C972 vdd vdd 0.05fF
+C973 vdd cla_0/3and_1/a_13_5# 0.08fF
+C974 g0 p2 0.08fF
+C975 g1 p1 0.13fF
+C976 g0 gnd 0.01fF
+C977 gnd gnd 0.10fF
+C978 carry2 sumblock_0/xor1_0/a_32_n47# 0.28fF
+C979 p0 vdd 0.23fF
+C980 sum3 p3 0.01fF
+C981 p2 gnd 0.04fF
+C982 vdd c_in 0.12fF
+C983 gnd gnd 0.15fF
+C984 vdd gnd 0.03fF
+C985 p0 p2 0.08fF
+C986 cla_0/5and_0/a_13_5# p2 0.08fF
+C987 t4_2and t4_5and 0.08fF
+C988 g0 gnd 0.06fF
+C989 gnd p0 0.12fF
+C990 t1_2and gnd 0.04fF
+C991 gnd gnd 0.14fF
+C992 b0 gnd 0.06fF
+C993 gnd gnd 0.05fF
+C994 t1_2and gnd 0.06fF
+C995 vdd vdd 0.03fF
+C996 c_in sumblock_0/xor1_3/a_n12_n44# 0.20fF
+C997 gnd g0 0.07fF
+C998 gnd c_in 0.15fF
+C999 gnd gnd 0.03fF
+C1000 a2 vdd 0.23fF
+C1001 b2 propgen_0/xor1_1/a_32_n47# 0.28fF
+C1002 vdd t3_4and 0.03fF
+C1003 vdd p3 0.06fF
+C1004 sumblock_0/xor1_2/a_n12_n44# p1 0.08fF
+C1005 p3 gnd 0.04fF
+C1006 cla_0/3and_0/a_13_5# vdd 0.13fF
+C1007 gnd p2 0.09fF
+C1008 b1 vdd 0.05fF
+C1009 propgen_0/2and_3/a_13_5# vdd 0.08fF
+C1010 p0 cla_0/2and_0/a_13_5# 0.17fF
+C1011 t3_3and g2 1.02fF
+C1012 vdd gnd 0.07fF
+C1013 p1 vdd 0.04fF
+C1014 p3 cla_0/4and_1/a_13_5# 0.12fF
+C1015 g1 p2 1.50fF
+C1016 c_in cla_0/2and_0/a_13_5# 0.04fF
+C1017 gnd Gnd 2.01fF 
+C1018 vdd Gnd 3.60fF 
+C1019 gnd Gnd 0.15fF 
+C1020 gnd Gnd 0.31fF 
+C1021 gnd Gnd 0.12fF 
+C1022 gnd Gnd 0.02fF 
+C1023 gnd Gnd 0.12fF 
+C1024 gnd Gnd 0.02fF 
+C1025 gnd Gnd 0.29fF 
+C1026 gnd Gnd 0.14fF 
+C1027 gnd Gnd 0.17fF 
+C1028 gnd Gnd 0.15fF 
+C1029 vdd Gnd 0.11fF 
+C1030 gnd Gnd 0.16fF 
+C1031 vdd Gnd 0.30fF 
+C1032 vdd Gnd 0.02fF 
+C1033 vdd Gnd 0.84fF 
+C1034 gnd Gnd 0.45fF 
+C1035 gnd Gnd 0.45fF 
+C1036 gnd Gnd 0.46fF 
+C1037 gnd Gnd 0.46fF 
+C1038 gnd Gnd 3.27fF 
+C1039 gnd Gnd 0.41fF
+C1040 p0 Gnd 1.22fF
+C1041 vdd Gnd 0.41fF
+C1042 propgen_0/xor1_3/a_32_n47# Gnd 0.42fF
+C1043 propgen_0/xor1_3/a_n12_n44# Gnd 0.50fF
+C1044 b0 Gnd 2.66fF
+C1045 a0 Gnd 2.68fF
+C1046 vdd Gnd 1.63fF
+C1047 gnd Gnd 0.52fF
+C1048 vdd Gnd 0.41fF
+C1049 propgen_0/xor1_2/a_32_n47# Gnd 0.42fF
+C1050 propgen_0/xor1_2/a_n12_n44# Gnd 0.50fF
+C1051 b1 Gnd 3.27fF
+C1052 a1 Gnd 2.69fF
+C1053 vdd Gnd 1.63fF
+C1054 gnd Gnd 0.49fF
+C1055 p2 Gnd 1.36fF
+C1056 vdd Gnd 0.41fF
+C1057 propgen_0/xor1_1/a_32_n47# Gnd 0.42fF
+C1058 propgen_0/xor1_1/a_n12_n44# Gnd 0.50fF
+C1059 b2 Gnd 2.66fF
+C1060 a2 Gnd 2.70fF
+C1061 vdd Gnd 1.63fF
+C1062 gnd Gnd 0.54fF
+C1063 p3 Gnd 1.08fF
+C1064 vdd Gnd 0.54fF
+C1065 propgen_0/xor1_0/a_32_n47# Gnd 0.42fF
+C1066 propgen_0/xor1_0/a_n12_n44# Gnd 0.50fF
+C1067 b3 Gnd 2.66fF
+C1068 a3 Gnd 2.72fF
+C1069 vdd Gnd 1.63fF
+C1070 gnd Gnd 0.34fF
+C1071 g0 Gnd 0.41fF
+C1072 vdd Gnd 0.36fF
+C1073 propgen_0/2and_3/a_13_5# Gnd 0.37fF
+C1074 b0 Gnd 0.32fF
+C1075 a0 Gnd 0.28fF
+C1076 vdd Gnd 0.43fF
+C1077 vdd Gnd 0.67fF
+C1078 gnd Gnd 0.34fF
+C1079 vdd Gnd 0.36fF
+C1080 propgen_0/2and_2/a_13_5# Gnd 0.37fF
+C1081 b1 Gnd 0.32fF
+C1082 a1 Gnd 0.28fF
+C1083 vdd Gnd 0.43fF
+C1084 vdd Gnd 0.67fF
+C1085 gnd Gnd 0.34fF
+C1086 g2 Gnd 0.43fF
+C1087 vdd Gnd 0.27fF
+C1088 propgen_0/2and_1/a_13_5# Gnd 0.37fF
+C1089 b2 Gnd 0.32fF
+C1090 a3 Gnd 0.28fF
+C1091 vdd Gnd 0.43fF
+C1092 vdd Gnd 0.67fF
+C1093 gnd Gnd 0.34fF
+C1094 p3 Gnd 0.42fF
+C1095 vdd Gnd 0.36fF
+C1096 propgen_0/2and_0/a_13_5# Gnd 0.37fF
+C1097 b3 Gnd 0.32fF
+C1098 a3 Gnd 0.28fF
+C1099 vdd Gnd 0.43fF
+C1100 vdd Gnd 0.67fF
+C1101 vdd Gnd 0.12fF 
+C1102 gnd Gnd 1.29fF
+C1103 sum0 Gnd 0.78fF
+C1104 vdd Gnd 0.43fF
+C1105 sumblock_0/xor1_3/a_32_n47# Gnd 0.42fF
+C1106 sumblock_0/xor1_3/a_n12_n44# Gnd 0.50fF
+C1107 c_in Gnd 1.74fF
+C1108 p0 Gnd 1.50fF
+C1109 vdd Gnd 1.63fF
+C1110 gnd Gnd 0.54fF
+C1111 sum1 Gnd 0.93fF
+C1112 vdd Gnd 0.43fF
+C1113 sumblock_0/xor1_2/a_32_n47# Gnd 0.42fF
+C1114 sumblock_0/xor1_2/a_n12_n44# Gnd 0.50fF
+C1115 carry0 Gnd 1.85fF
+C1116 vdd Gnd 1.63fF
+C1117 gnd Gnd 0.54fF
+C1118 sum2 Gnd 0.91fF
+C1119 vdd Gnd 0.43fF
+C1120 sumblock_0/xor1_1/a_32_n47# Gnd 0.42fF
+C1121 sumblock_0/xor1_1/a_n12_n44# Gnd 0.50fF
+C1122 carry1 Gnd 1.73fF
+C1123 p2 Gnd 1.44fF
+C1124 vdd Gnd 1.63fF
+C1125 gnd Gnd 0.54fF
+C1126 sum3 Gnd 0.92fF
+C1127 vdd Gnd 0.43fF
+C1128 sumblock_0/xor1_0/a_32_n47# Gnd 0.42fF
+C1129 sumblock_0/xor1_0/a_n12_n44# Gnd 0.50fF
+C1130 carry2 Gnd 1.75fF
+C1131 p3 Gnd 1.68fF
+C1132 vdd Gnd 1.63fF
+C1133 gnd Gnd 0.28fF 
+C1134 gnd Gnd 0.23fF 
+C1135 gnd Gnd 0.07fF 
+C1136 gnd Gnd 0.00fF 
+C1137 gnd Gnd 0.12fF 
+C1138 gnd Gnd 0.42fF 
+C1139 gnd Gnd 0.48fF 
+C1140 gnd Gnd 0.11fF 
+C1141 vdd Gnd 0.64fF 
+C1142 vdd Gnd 0.30fF 
+C1143 gnd Gnd 0.57fF 
+C1144 gnd Gnd 0.81fF 
+C1145 gnd Gnd 0.11fF 
+C1146 vdd Gnd 0.11fF 
+C1147 gnd Gnd 0.91fF 
+C1148 vdd Gnd 0.25fF 
+C1149 vdd Gnd 0.71fF 
+C1150 gnd Gnd 1.42fF 
+C1151 gnd Gnd 0.19fF 
+C1152 gnd Gnd 0.15fF 
+C1153 vdd Gnd 0.11fF 
+C1154 vdd Gnd 1.64fF 
+C1155 vdd Gnd 2.46fF 
+C1156 vdd Gnd 0.08fF 
+C1157 gnd Gnd 0.82fF 
+C1158 p1 Gnd 3.71fF
+C1159 vdd Gnd 0.19fF 
+C1160 gnd Gnd 0.39fF
+C1161 t4_4and Gnd 0.14fF
+C1162 vdd Gnd 0.38fF
+C1163 cla_0/4and_1/a_13_5# Gnd 0.52fF
+C1164 p3 Gnd 0.29fF
+C1165 p2 Gnd 0.40fF
+C1166 g0 Gnd 0.48fF
+C1167 vdd Gnd 0.43fF
+C1168 vdd Gnd 0.99fF
+C1169 gnd Gnd 0.34fF
+C1170 t3_4and Gnd 0.23fF
+C1171 vdd Gnd 0.25fF
+C1172 cla_0/4and_0/a_13_5# Gnd 0.52fF
+C1173 p2 Gnd 0.64fF
+C1174 p1 Gnd 0.65fF
+C1175 p0 Gnd 0.62fF
+C1176 vdd Gnd 0.43fF
+C1177 vdd Gnd 0.99fF
+C1178 gnd Gnd 0.18fF
+C1179 sum1 Gnd 0.26fF
+C1180 vdd Gnd 0.31fF
+C1181 cla_0/3or_0/a_0_n30# Gnd 0.46fF
+C1182 t2_2and Gnd 0.34fF
+C1183 t2_3and Gnd 0.29fF
+C1184 vdd Gnd 1.21fF
+C1185 gnd Gnd 0.41fF
+C1186 t4_5and Gnd 0.14fF
+C1187 vdd Gnd 0.46fF
+C1188 cla_0/5and_0/a_13_5# Gnd 0.62fF
+C1189 p3 Gnd 0.69fF
+C1190 p2 Gnd 0.37fF
+C1191 p1 Gnd 1.16fF
+C1192 p0 Gnd 1.75fF
+C1193 vdd Gnd 0.43fF
+C1194 vdd Gnd 1.18fF
+C1195 vdd Gnd 0.31fF
+C1196 vdd Gnd 0.28fF
+C1197 cla_0/2or_0/a_0_n30# Gnd 0.35fF
+C1198 t1_2and Gnd 0.29fF
+C1199 g0 Gnd 0.23fF
+C1200 vdd Gnd 1.03fF
+C1201 sum3 Gnd 0.25fF
+C1202 vdd Gnd 0.31fF
+C1203 cla_0/5or_0/a_0_n44# Gnd 0.65fF
+C1204 g3 Gnd 0.89fF
+C1205 t4_2and Gnd 0.61fF
+C1206 t4_3and Gnd 0.55fF
+C1207 t4_4and Gnd 0.51fF
+C1208 t4_5and Gnd 0.45fF
+C1209 vdd Gnd 1.55fF
+C1210 gnd Gnd 0.33fF
+C1211 t4_2and Gnd 0.17fF
+C1212 vdd Gnd 0.28fF
+C1213 cla_0/2and_3/a_13_5# Gnd 0.37fF
+C1214 p3 Gnd 0.53fF
+C1215 g2 Gnd 1.27fF
+C1216 vdd Gnd 0.43fF
+C1217 vdd Gnd 0.67fF
+C1218 gnd Gnd 0.31fF
+C1219 t3_2and Gnd 0.11fF
+C1220 vdd Gnd 0.28fF
+C1221 cla_0/2and_2/a_13_5# Gnd 0.37fF
+C1222 p2 Gnd 0.52fF
+C1223 vdd Gnd 0.43fF
+C1224 vdd Gnd 0.67fF
+C1225 gnd Gnd 0.33fF
+C1226 t2_2and Gnd 0.17fF
+C1227 vdd Gnd 0.36fF
+C1228 cla_0/2and_1/a_13_5# Gnd 0.37fF
+C1229 p1 Gnd 0.51fF
+C1230 g0 Gnd 0.46fF
+C1231 vdd Gnd 0.43fF
+C1232 vdd Gnd 0.67fF
+C1233 gnd Gnd 0.29fF
+C1234 t1_2and Gnd 0.17fF
+C1235 cla_0/2and_0/a_13_5# Gnd 0.37fF
+C1236 p0 Gnd 0.36fF
+C1237 vdd Gnd 0.43fF
+C1238 vdd Gnd 0.67fF
+C1239 gnd Gnd 0.37fF
+C1240 t4_3and Gnd 0.17fF
+C1241 vdd Gnd 0.33fF
+C1242 cla_0/3and_2/a_13_5# Gnd 0.43fF
+C1243 p3 Gnd 0.46fF
+C1244 p2 Gnd 0.59fF
+C1245 g1 Gnd 1.71fF
+C1246 vdd Gnd 0.43fF
+C1247 vdd Gnd 0.83fF
+C1248 gnd Gnd 0.32fF
+C1249 t3_3and Gnd 0.18fF
+C1250 vdd Gnd 0.06fF
+C1251 cla_0/3and_1/a_13_5# Gnd 0.43fF
+C1252 p2 Gnd 0.57fF
+C1253 g0 Gnd 0.45fF
+C1254 vdd Gnd 0.43fF
+C1255 vdd Gnd 0.83fF
+C1256 gnd Gnd 0.36fF
+C1257 sum2 Gnd 0.23fF
+C1258 vdd Gnd 0.28fF
+C1259 cla_0/4or_0/a_0_n37# Gnd 0.54fF
+C1260 t3_3and Gnd 0.51fF
+C1261 t3_2and Gnd 0.37fF
+C1262 t3_4and Gnd 0.31fF
+C1263 vdd Gnd 1.39fF
+C1264 gnd Gnd 0.36fF
+C1265 t2_3and Gnd 0.14fF
+C1266 vdd Gnd 0.39fF
+C1267 cla_0/3and_0/a_13_5# Gnd 0.43fF
+C1268 p1 Gnd 0.43fF
+C1269 p0 Gnd 0.37fF
+C1270 c_in Gnd 0.29fF
+C1271 vdd Gnd 0.43fF
+C1272 vdd Gnd 0.83fF
+
+.tran 0.1n 200n
+
+.control
+run
+
+set color0 = white
+set color1 = black
+plot v(a0) v(a1)+2 v(a2)+4 v(a3)+6 
+
+plot v(sum0) v(sum1)+2 v(sum2)+4 v(sum3)+6 
+
+set curplottitle = "Nilavra Ghosh - 2023102006"
+.endc

@@ -1,0 +1,22 @@
+* 2 Input AND gate
+.subckt and2 OUT A B
+
+* PUN
+M1 nand A VDD VDD CMOSP W={width_P} L={LAMBDA} AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P} AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+
+
+M2 VDD B nand VDD CMOSP W={width_P} L={LAMBDA} AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P} AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+
+
+* PDN
+M3 node1 A GND Gnd CMOSN W={width_N} L={LAMBDA} AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N} AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+
+M4 nand B node1 Gnd CMOSN W={width_N} L={LAMBDA} AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N} AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+
+*Inverter
+M5 OUT nand VDD VDD CMOSP W={width_P} L={LAMBDA} AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P} AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+
+
+M6 OUT nand GND Gnd CMOSN W={width_N} L={LAMBDA} AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N} AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+
+.ends

@@ -1,0 +1,89 @@
+* SPICE3 file created from 5or.ext - technology: scmos
+
+.include TSMC_180nm.txt
+.param SUPPLY = 1.8
+.option scale=0.09u
+.global gnd vdd
+
+VDS vdd gnd 'SUPPLY'
+vin1 A gnd pulse 1.8 0 0ns 100ps 100ps 9.9ns 20ns
+vin2 B gnd pulse 1.8 0 0ns 100ps 100ps 19.9ns 40ns
+vin3 C gnd pulse 1.8 0 0ns 100ps 100ps 39.9ns 80ns
+vin4 D gnd pulse 1.8 0 0ns 100ps 100ps 79.9ns 160ns
+vin5 E gnd pulse 1.8 0 0ns 100ps 100ps 159.9ns 320ns
+
+
+M1000 OUT 5NOR VDD VDD  CMOSP w=6 l=2
++  ad=30 pd=22 as=60 ps=44
+M1001 GND D 5NOR Gnd CMOSN w=4 l=2
++  ad=100 pd=82 as=88 ps=68
+M1002 OUT 5NOR GND Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1003 5NOR C GND Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1004 5NOR A GND Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1005 a_19_13# C a_10_13# VDD  CMOSP w=6 l=2
++  ad=48 pd=28 as=42 ps=26
+M1006 a_0_13# A VDD VDD  CMOSP w=6 l=2
++  ad=48 pd=28 as=0 ps=0
+M1007 a_29_13# D a_19_13# VDD  CMOSP w=6 l=2
++  ad=48 pd=28 as=0 ps=0
+M1008 GND B 5NOR Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1009 a_10_13# B a_0_13# VDD  CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1010 5NOR E a_29_13# VDD  CMOSP w=6 l=2
++  ad=36 pd=24 as=0 ps=0
+M1011 5NOR E GND Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+C0 C 5NOR 0.08fF
+C1 B A 0.31fF
+C2 C E 0.08fF
+C3 B 5NOR 0.08fF
+C4 VDD 5NOR 0.05fF
+C5 VDD OUT 0.03fF
+C6 B E 0.08fF
+C7 OUT GND 0.06fF
+C8 VDD D 0.06fF
+C9 A E 0.08fF
+C10 5NOR E 0.48fF
+C11 VDD  C 0.06fF
+C12 C D 0.58fF
+C13 OUT VDD 0.06fF
+C14 VDD B 0.06fF
+C15 B D 0.08fF
+C16 VDD  VDD 0.06fF
+C17 OUT 5NOR 0.05fF
+C18 VDD A 0.06fF
+C19 A D 0.08fF
+C20 VDD 5NOR 0.09fF
+C21 5NOR D 0.08fF
+C22 C B 0.62fF
+C23 5NOR GND 0.33fF
+C24 VDD E 0.06fF
+C25 E D 0.70fF
+C26 C A 0.08fF
+C27 GND Gnd 0.39fF
+C28 OUT Gnd 0.21fF
+C29 VDD Gnd 0.32fF
+C30 5NOR Gnd 0.65fF
+C31 E Gnd 0.48fF
+C32 D Gnd 0.46fF
+C33 C Gnd 0.42fF
+C34 B Gnd 0.41fF
+C35 A Gnd 0.38fF
+C36 VDD Gnd 1.55fF
+
+.tran 0.05n 320n
+
+.control
+run
+
+set color0 = white
+set color1 = black
+
+plot v(OUT) v(A)+2 v(B)+4 v(C)+6 v(D)+8 v(E)+10
+
+
+.endc

@@ -1,0 +1,55 @@
+magic
+tech scmos
+timestamp 1638747933
+<< metal1 >>
+rect 4 78 15 87
+rect 6 0 14 8
+rect 3 -20 14 -11
+rect 6 -98 14 -90
+rect 3 -120 14 -111
+rect 6 -198 14 -190
+rect 3 -218 14 -209
+rect 6 -296 14 -288
+<< m5contact >>
+rect 6 0 14 8
+rect 6 -98 14 -90
+rect 6 -198 14 -190
+rect 6 -296 14 -288
+<< metal5 >>
+rect -38 0 6 8
+rect -38 -90 -27 0
+rect -38 -98 6 -90
+rect -38 -190 -27 -98
+rect -38 -198 6 -190
+rect -38 -288 -27 -198
+rect -38 -296 6 -288
+<< m6contact >>
+rect 4 78 15 87
+rect 3 -20 14 -11
+rect 3 -120 14 -111
+rect 3 -218 14 -209
+<< metal6 >>
+rect -18 78 4 87
+rect -18 -11 -7 78
+rect -18 -20 3 -11
+rect -18 -111 -7 -20
+rect -18 -120 3 -111
+rect -18 -209 -7 -120
+rect -18 -218 3 -209
+use xor1  xor1_0
+timestamp 1638597343
+transform 1 0 33 0 1 62
+box -33 -62 91 25
+use xor1  xor1_1
+timestamp 1638597343
+transform 1 0 33 0 1 -36
+box -33 -62 91 25
+use xor1  xor1_2
+timestamp 1638597343
+transform 1 0 33 0 1 -136
+box -33 -62 91 25
+use xor1  xor1_3
+timestamp 1638597343
+transform 1 0 33 0 1 -234
+box -33 -62 91 25
+<< end >>

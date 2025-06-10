@@ -1,0 +1,262 @@
+* SPICE3 file created from sumblock.ext - technology: scmos
+
+.include TSMC_180nm.txt
+.param SUPPLY = 1.8
+.option scale=0.09u
+.global gnd vdd
+
+VDS vdd gnd 'SUPPLY'
+vin1 p3 gnd 1.8
+vin2 p2 gnd 0
+vin3 p1 gnd 0
+vin4 p0 gnd 0
+vin5 carry2 gnd 0
+vin6 carry1 gnd 1.8
+vin8 carry0 gnd 0
+vin7 c_in gnd 1.8
+
+M1000 xor1_0/a_24_2# p3 sum3 vdd CMOSP w=6 l=2
++  ad=48 pd=28 as=48 ps=28
+M1001 vdd carry2 xor1_0/a_32_n47# vdd CMOSP w=6 l=2
++  ad=120 pd=88 as=30 ps=22
+M1002 gnd carry2 xor1_0/a_32_n47# Gnd CMOSN w=4 l=2
++  ad=80 pd=72 as=20 ps=18
+M1003 sum3 xor1_0/a_n12_n44# xor1_0/a_4_2# vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=48 ps=28
+M1004 xor1_0/a_n12_n44# p3 gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1005 gnd xor1_0/a_32_n47# xor1_0/a_24_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1006 xor1_0/a_4_2# carry2 vdd vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1007 xor1_0/a_24_n44# xor1_0/a_n12_n44# sum3 Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1008 vdd xor1_0/a_32_n47# xor1_0/a_24_2# vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1009 sum3 p3 xor1_0/a_4_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1010 xor1_0/a_4_n44# carry2 gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1011 xor1_0/a_n12_n44# p3 vdd vdd CMOSP w=6 l=2
++  ad=30 pd=22 as=0 ps=0
+
+
+M1012 xor1_1/a_24_2# p2 sum2 vdd CMOSP w=6 l=2
++  ad=48 pd=28 as=48 ps=28
+M1013 vdd carry1 xor1_1/a_32_n47# vdd CMOSP w=6 l=2
++  ad=120 pd=88 as=30 ps=22
+M1014 gnd carry1 xor1_1/a_32_n47# Gnd CMOSN w=4 l=2
++  ad=80 pd=72 as=20 ps=18
+M1015 sum2 xor1_1/a_n12_n44# xor1_1/a_4_2# vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=48 ps=28
+M1016 xor1_1/a_n12_n44# p2 gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1017 gnd xor1_1/a_32_n47# xor1_1/a_24_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1018 xor1_1/a_4_2# carry1 vdd vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1019 xor1_1/a_24_n44# xor1_1/a_n12_n44# sum2 Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1020 vdd xor1_1/a_32_n47# xor1_1/a_24_2# vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1021 sum2 p2 xor1_1/a_4_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1022 xor1_1/a_4_n44# carry1 gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1023 xor1_1/a_n12_n44# p2 vdd vdd CMOSP w=6 l=2
++  ad=30 pd=22 as=0 ps=0
+
+
+M1024 xor1_2/a_24_2# p1 sum1 vdd CMOSP w=6 l=2
++  ad=48 pd=28 as=48 ps=28
+M1025 vdd carry0 xor1_2/a_32_n47# vdd CMOSP w=6 l=2
++  ad=120 pd=88 as=30 ps=22
+M1026 gnd carry0 xor1_2/a_32_n47# Gnd CMOSN w=4 l=2
++  ad=80 pd=72 as=20 ps=18
+M1027 sum1 xor1_2/a_n12_n44# xor1_2/a_4_2# vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=48 ps=28
+M1028 xor1_2/a_n12_n44# p1 gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1029 gnd xor1_2/a_32_n47# xor1_2/a_24_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1030 xor1_2/a_4_2# carry0 vdd vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1031 xor1_2/a_24_n44# xor1_2/a_n12_n44# sum1 Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1032 vdd xor1_2/a_32_n47# xor1_2/a_24_2# vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1033 sum1 p1 xor1_2/a_4_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1034 xor1_2/a_4_n44# carry0 gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1035 xor1_2/a_n12_n44# p1 vdd vdd CMOSP w=6 l=2
++  ad=30 pd=22 as=0 ps=0
+
+
+M1036 xor1_3/a_24_2# p0 sum0 vdd CMOSP w=6 l=2
++  ad=48 pd=28 as=48 ps=28
+M1037 vdd c_in xor1_3/a_32_n47# vdd CMOSP w=6 l=2
++  ad=120 pd=88 as=30 ps=22
+M1038 gnd c_in xor1_3/a_32_n47# Gnd CMOSN w=4 l=2
++  ad=80 pd=72 as=20 ps=18
+M1039 sum0 xor1_3/a_n12_n44# xor1_3/a_4_2# vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=48 ps=28
+M1040 xor1_3/a_n12_n44# p0 gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1041 gnd xor1_3/a_32_n47# xor1_3/a_24_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1042 xor1_3/a_4_2# c_in vdd vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1043 xor1_3/a_24_n44# xor1_3/a_n12_n44# sum0 Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1044 vdd xor1_3/a_32_n47# xor1_3/a_24_2# vdd CMOSP w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1045 sum0 p0 xor1_3/a_4_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=32 ps=24
+M1046 xor1_3/a_4_n44# c_in gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1047 xor1_3/a_n12_n44# p0 vdd vdd CMOSP w=6 l=2
++  ad=30 pd=22 as=0 ps=0
+C0 p1 vdd 0.14fF
+C1 gnd xor1_2/a_n12_n44# 0.08fF
+C2 sum1 p1 0.01fF
+C3 xor1_3/a_32_n47# gnd 0.04fF
+C4 sum2 p2 0.01fF
+C5 gnd gnd 0.04fF
+C6 sum2 carry1 0.10fF
+C7 xor1_1/a_n12_n44# vdd 0.09fF
+C8 vdd carry2 0.13fF
+C9 vdd gnd 0.05fF
+C10 vdd p2 0.14fF
+C11 sum3 xor1_0/a_32_n47# 0.09fF
+C12 vdd vdd 0.12fF
+C13 xor1_2/a_32_n47# p1 0.10fF
+C14 c_in p0 0.64fF
+C15 vdd carry1 0.13fF
+C16 sum1 vdd 0.02fF
+C17 gnd carry0 0.12fF
+C18 vdd p3 0.23fF
+C19 sum0 c_in 0.10fF
+C20 xor1_1/a_n12_n44# p2 0.08fF
+C21 xor1_1/a_n12_n44# carry1 0.20fF
+C22 carry2 gnd 0.12fF
+C23 carry2 xor1_0/a_32_n47# 0.28fF
+C24 sum3 xor1_0/a_n12_n44# 0.12fF
+C25 vdd xor1_2/a_32_n47# 0.06fF
+C26 carry1 p2 0.64fF
+C27 xor1_2/a_32_n47# vdd 0.09fF
+C28 c_in vdd 0.13fF
+C29 sum1 xor1_2/a_32_n47# 0.09fF
+C30 gnd p1 0.08fF
+C31 vdd vdd 0.12fF
+C32 gnd gnd 0.04fF
+C33 xor1_1/a_32_n47# gnd 0.04fF
+C34 carry2 xor1_0/a_n12_n44# 0.20fF
+C35 xor1_1/a_n12_n44# vdd 0.12fF
+C36 vdd p2 0.23fF
+C37 c_in xor1_3/a_n12_n44# 0.20fF
+C38 sum0 p0 0.01fF
+C39 vdd xor1_0/a_32_n47# 0.09fF
+C40 p0 vdd 0.14fF
+C41 gnd xor1_2/a_32_n47# 0.04fF
+C42 xor1_3/a_32_n47# c_in 0.28fF
+C43 sum0 vdd 0.02fF
+C44 vdd xor1_0/a_n12_n44# 0.09fF
+C45 xor1_0/a_32_n47# gnd 0.04fF
+C46 sum3 p3 0.01fF
+C47 p0 xor1_3/a_n12_n44# 0.08fF
+C48 vdd p0 0.23fF
+C49 sum0 xor1_3/a_n12_n44# 0.12fF
+C50 gnd xor1_0/a_n12_n44# 0.08fF
+C51 c_in gnd 0.12fF
+C52 carry2 p3 0.64fF
+C53 sum2 xor1_1/a_32_n47# 0.09fF
+C54 vdd xor1_3/a_n12_n44# 0.09fF
+C55 xor1_1/a_32_n47# vdd 0.09fF
+C56 vdd vdd 0.12fF
+C57 xor1_3/a_32_n47# p0 0.10fF
+C58 xor1_2/a_n12_n44# carry0 0.20fF
+C59 gnd gnd 0.04fF
+C60 sum0 xor1_3/a_32_n47# 0.09fF
+C61 vdd vdd 0.12fF
+C62 vdd p3 0.14fF
+C63 gnd gnd 0.04fF
+C64 xor1_1/a_32_n47# p2 0.10fF
+C65 xor1_1/a_n12_n44# gnd 0.08fF
+C66 xor1_1/a_32_n47# carry1 0.28fF
+C67 vdd xor1_3/a_n12_n44# 0.12fF
+C68 xor1_3/a_32_n47# vdd 0.09fF
+C69 p0 gnd 0.08fF
+C70 xor1_2/a_n12_n44# p1 0.08fF
+C71 gnd p2 0.08fF
+C72 vdd gnd 0.05fF
+C73 gnd carry1 0.12fF
+C74 vdd xor1_0/a_32_n47# 0.06fF
+C75 gnd p3 0.08fF
+C76 xor1_0/a_32_n47# p3 0.10fF
+C77 vdd xor1_2/a_n12_n44# 0.12fF
+C78 xor1_1/a_32_n47# vdd 0.06fF
+C79 carry0 p1 0.64fF
+C80 xor1_2/a_n12_n44# vdd 0.09fF
+C81 sum1 xor1_2/a_n12_n44# 0.12fF
+C82 vdd xor1_3/a_32_n47# 0.06fF
+C83 sum3 carry2 0.10fF
+C84 vdd xor1_0/a_n12_n44# 0.12fF
+C85 gnd gnd 0.66fF
+C86 xor1_0/a_n12_n44# p3 0.08fF
+C87 xor1_3/a_n12_n44# gnd 0.08fF
+C88 carry0 vdd 0.13fF
+C89 sum1 carry0 0.10fF
+C90 vdd gnd 0.06fF
+C91 vdd gnd 0.05fF
+C92 sum2 vdd 0.02fF
+C93 sum3 vdd 0.02fF
+C94 vdd p1 0.23fF
+C95 xor1_2/a_32_n47# carry0 0.28fF
+C96 sum2 xor1_1/a_n12_n44# 0.12fF
+C97 gnd Gnd 0.36fF
+C98 gnd Gnd 0.12fF
+C99 gnd Gnd 0.54fF
+C100 sum0 Gnd 0.79fF
+C101 vdd Gnd 0.43fF
+C102 xor1_3/a_32_n47# Gnd 0.42fF
+C103 xor1_3/a_n12_n44# Gnd 0.50fF
+C104 c_in Gnd 1.71fF
+C105 p0 Gnd 1.65fF
+C106 vdd Gnd 1.63fF
+C107 gnd Gnd 0.54fF
+C108 sum1 Gnd 0.79fF
+C109 vdd Gnd 0.43fF
+C110 xor1_2/a_32_n47# Gnd 0.42fF
+C111 xor1_2/a_n12_n44# Gnd 0.50fF
+C112 carry0 Gnd 1.71fF
+C113 p1 Gnd 1.65fF
+C114 vdd Gnd 1.63fF
+C115 gnd Gnd 0.54fF
+C116 sum2 Gnd 0.79fF
+C117 vdd Gnd 0.43fF
+C118 xor1_1/a_32_n47# Gnd 0.42fF
+C119 xor1_1/a_n12_n44# Gnd 0.50fF
+C120 carry1 Gnd 1.71fF
+C121 p2 Gnd 1.65fF
+C122 vdd Gnd 1.63fF
+C123 gnd Gnd 0.54fF
+C124 sum3 Gnd 0.79fF
+C125 vdd Gnd 0.43fF
+C126 xor1_0/a_32_n47# Gnd 0.42fF
+C127 xor1_0/a_n12_n44# Gnd 0.50fF
+C128 carry2 Gnd 1.71fF
+C129 p3 Gnd 1.65fF
+C130 vdd Gnd 1.63fF
+
+.tran 0.01n 40n
+
+.control
+run
+
+set color0 = white
+set color1 = black
+
+plot (v(sum0)+2*v(sum1)+4*v(sum2)+8*v(sum3))/1.8
+
+.endc
